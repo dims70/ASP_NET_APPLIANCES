@@ -173,6 +173,13 @@
     <Content Include="Images\logo.png" />
     <Content Include="Images\logoforinfo.png" />
     <Content Include="Images\main-background.jpg" />
+    <Content Include="Images\UserPhoto\1nails.jpg" />
+    <Content Include="Images\UserPhoto\andy61.jpg" />
+    <Content Include="Images\UserPhoto\beef012.jfif" />
+    <Content Include="Images\UserPhoto\jorky89.jpg" />
+    <Content Include="Images\UserPhoto\kokos777.jpg" />
+    <Content Include="Images\UserPhoto\miha33.jfif" />
+    <Content Include="Images\UserPhoto\test.jpg" />
     <Content Include="Scripts\click.js" />
     <Content Include="Scripts\jquery 3.4.1.js" />
     <Content Include="Scripts\main.js" />
@@ -216,6 +223,9 @@
     <EmbeddedResource Include="Migrations\202004011036015_Initial.resx">
       <DependentUpon>202004011036015_Initial.cs</DependentUpon>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Images\EquipmentsPhoto\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

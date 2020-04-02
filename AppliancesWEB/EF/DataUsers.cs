@@ -37,6 +37,8 @@ namespace AppliancesWEB
         [StringLength(50)]
         public string Adress { get; set; }
 
+        [StringLength(100)]
+        public string imageUserPath { get; set; }
 
         public virtual AuthUsers AuthUsers { get; set; }
 

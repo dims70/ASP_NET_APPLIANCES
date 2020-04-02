@@ -11,8 +11,13 @@ namespace AppliancesWEB.Controllers
         AppliancesContext db = new AppliancesContext();
         public ActionResult Info()
         {
-            var user = db.DataUsers.Where(data=>data.idUser==AuthUser.Id).ToList()[0];
-            return View(user);
+            var user = db.DataUsers.Where(data=>data.idUser==AuthUser.Id).ToList();
+            if (user.Count!=0)
+            {
+                return View(user[0]);
+            }
+            return View();
+            
         }
     }
 }
