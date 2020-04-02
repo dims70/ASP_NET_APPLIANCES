@@ -1,0 +1,189 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="~/Content/style.css">
+    <link rel="stylesheet" href="~/Content/font-awesome.css">
+    <link href="~/Content/googleFont.css" rel="stylesheet" />
+    <title>@ViewBag.Title</title>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="header">
+            <div class="container">
+                <div class="header-container">
+                    <div class="name-container">
+                        <div class="img-logo">
+                            <img src="~/Images/logo.png" alt="" width="60" height="60">
+                        </div>
+                        <div class="title-logo">
+                            <a>LIAN</a>
+                        </div>
+                    </div>
+                    <div class="search-container">
+                        <div class="search">
+                            <input type="text" name="search" id="search" placeholder="Найти что-нибудь...">
+                            <button type="submit" class="btn-search"><i class="fa fa-search"></i></button>
+                        </div>
+                    </div>
+                    <div class="header-menu">
+                        <ul>
+                            <li>
+                                <a class="point-menu" href="~/Catalog/Index">Каталог</a>
+                            </li>
+                            <li>
+                                <a class="point-menu" href="~/News/Index">Новости</a>
+                            </li>
+                            <li>
+                                @if (Session["Login"] == null)
+                                {
+                                <a class="point-menu" href="~/Auth/Sign">Аккаунт</a>
+                                }
+                                else
+                                {
+                                    <div style="color:white!important;border:none;cursor:pointer;margin:10px;">Вы: <a href="~/Account/Info" style="color:white">@Session["Login"]</a>
+                                        <a href="~/Auth/Out">
+                                            <i class="fa fa-sign-out" aria-hidden="true" style="color:red;font-size:20px;cursor:pointer;padding-left:5px">
+                                                
+                                            </i>
+                                        </a>
+                                    </div>
+                                }
+                            </li>
+                        </ul>
+                        <div class="mobile-nav" style="z-index: 3;position: relative;">
+                            <i class="fa fa-bars" id="burger" aria-hidden="true"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="mobile-menu-header">
+            <div class="m-nav-container">
+                <div class="mobile-nav-title">
+                    <h3>Навигация</h3>
+                </div>
+                <div class="mobile-nav-menu">
+                    <ul>
+                        <li>
+                        <a href="~/Catalog/Index">Каталог</a>
+                        </li>
+                        <li>
+                        <a href="~/News/Index">Новости</a>
+                        </li>
+                        <li>
+                            @if (Session["Login"] == null)
+                            {
+                                <a href="~/Auth/Sign">Аккаунт</a>
+                            }
+                            else
+                            {
+                                <div style="text-align:center">
+                                    Вы: <a href="~/Account/Info">@Session["Login"]</a>
+                                    <a href="/Auth/Out">
+                                        <i class="fa fa-sign-out" aria-hidden="true" style="color:red;font-size:20px;cursor:pointer;padding-left:5px">
+
+                                        </i>
+                                    </a>
+                                </div>
+                            }
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+                @RenderBody()
+
+        <div class="footer">
+            <div class="container">
+                <div class="mobile-footer">
+                    <ul>
+                        <li>
+                            <span style="color:rgb(166, 206, 201)" class="menu-item-1">Навигация <i class="fa fa-caret-square-o-down" aria-hidden="true"></i></span>
+                            <div class="item-1">
+                                <a href="/">На главную</a>
+                                <a href="/Info/InfoPage">О нас</a>
+                                <a href="">Каталог</a>
+                                <a href="/Info/InfoPage#contact">Обратная связь</a>
+                            </div>
+                        </li>
+                        <li>
+                            <span style="color:rgb(166, 206, 201)" class="menu-item-2">Контакты <i class="fa fa-caret-square-o-down" aria-hidden="true"></i></span>
+                            <div class="item-2">
+                                <a>Email: shkarpetovd@mail.ru</a>
+                                <a>Телефон: 89283533269</a>
+                                <a>Вконтакте: vk.com/pantheon404</a>
+                                <a>Instagram: e.x.ception_</a>
+                            </div>
+                        </li>
+                        <li>
+                            <span style="color:rgb(166, 206, 201)" class="menu-item-3">Связь с нами <i class="fa fa-caret-square-o-down" aria-hidden="true"></i></span>
+                            <div class="item-3">
+                                <a href="/Info/InfoPage#contact">По электронной почте</a>
+                                <a href="/Info/InfoPage#contact">По номеру телефона</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="footer-container">
+                    <div class="footer-item-1">
+                        <div class="footer-item-title">
+
+                            <div class="footer-title">
+                                <h3>
+                                    Навигация
+                                </h3>
+                            </div>
+                        </div>
+                        <div class="footer-links">
+                            <a href="/">На главную</a>
+                            <a href="/Info/InfoPage">О нас</a>
+                            <a href="">Каталог</a>
+                            <a href="/Info/InfoPage#contact">Обратная связь</a>
+                        </div>
+                    </div>
+                    <div class="footer-item-2">
+                        <div class="footer-item-title">
+
+                            <div class="footer-title">
+                                <h3>Контакты</h3>
+                            </div>
+                        </div>
+                        <div class="footer-links">
+                            <a>@@: shkarpetovd@mail.ru</a>
+                            <a>Телефон: 89283533269</a>
+                            <a>VK: /pantheon404</a>
+                            <a>Instagram: e.x.ception_</a>
+                        </div>
+                    </div>
+                    <div class="footer-item-3">
+                        <div class="footer-item-title">
+
+                            <div class="footer-title">
+                                <h3>Связь с нами</h3>
+                            </div>
+                        </div>
+                        <div class="footer-links">
+                            <a href="/Info/InfoPage#contact">По электронной почте</a>
+                            <a href="/Info/InfoPage#contact">По номеру телефона</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            <div class="container">
+                <h3 align="center" style="margin:0;color:white">
+                    Copyright 2020.
+                </h3>
+            </div>
+        </div>
+    </div>
+    </div>
+    <script src="~/Scripts/click.js"></script>
+    <script src="~/Scripts/jquery 3.4.1.js"></script>
+    <script src="~/Scripts/main.js"></script>
+    
+</body>
+</html>

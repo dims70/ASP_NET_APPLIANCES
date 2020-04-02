@@ -1,0 +1,53 @@
+﻿@model List<Equipments>
+@{
+    ViewBag.Title = "Каталог";
+}
+
+<div class="catalog">
+    <div class="container">
+        <div class="filter-stroke">
+            <form action="~/Catalog/Filter" style="display:inline-flex;align-items:center" method="post">
+                <div >
+                    <input type="radio" name="category" value="Новый"><span>Новый</span><br />
+                    <input type="radio" name="category" value="Уцененный"><span>Уцененный </span>
+                </div>
+                <div >
+                    <input type="radio" name="category" value="ВсяТехника"><span>Вся техника</span></br>
+                    <input type="radio" name="category" value="Отечественная"><span>Отечественная</span>
+                </div>
+                <div >
+                    <input type="radio" name="searchfromcost" value="scost"><span>Поиск по цене от</span>
+                    <input type="number" name="cost" id="searchfromcost">
+                    <input type="submit" name="btn-submit-filter" value="Найти">
+                    </div>
+                </form>
+        </div>
+        <div class="catalog-content">
+            @foreach(var eq in Model) {
+                <div class="main-container-item">
+                <div class="main-item-img">
+                    <img src="~/Images/main-background.jpg" alt="" width="100%" height="100%">
+                </div>
+                <div class="main-item-title">
+                    <div class="item-title">
+                        <h5 style="">@eq.Name</h5>
+                    </div>
+                    <div class="cost">
+                        @((float)eq.Cost)р.
+                    </div>
+                </div>
+                <div class="text">
+                    @eq.Description
+                </div>
+                <div class="btn-info-item">
+                    <a href="~/Catalog/@eq.idEquipment">Подробности..</a>
+                </div>
+            </div>
+            }
+            @if (Model.Count == 0)
+            {
+                <h1 style="padding:100px">Ничего не найдено!</h1>
+            }
+        </div>
+    </div>
+</div>

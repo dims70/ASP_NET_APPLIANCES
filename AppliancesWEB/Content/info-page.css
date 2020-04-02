@@ -1,0 +1,225 @@
+*{
+    font-family: 'Google Sans', sans-serif;
+}
+body{
+    margin:0;
+    height: auto;
+    width: 100%;
+    min-width: 550px;
+    display: flex;
+}
+a:link,a:active,a:visited{
+    color:black;
+    text-decoration: none;
+}
+.wrapper 
+{ 
+    height: 100%;
+    width: auto;
+    flex-basis: 100%;
+}
+.header 
+{ 
+font-size: 20px;
+background: rgb(153, 153, 153);
+position: sticky;
+top: 0;
+box-shadow: 0px 5px 5px 2px grey;
+}
+
+.container 
+{ 
+    max-width: 1200px;
+    min-width: 500px;
+    height: auto;
+    margin:0 auto;
+
+}
+.section1 
+{ 
+    width: 100%;
+    background: snow;
+}
+.section3 
+{ 
+    width: 100%;
+    background: #375e71;
+}
+.section4 
+{ 
+    width: 100%;
+    background: orange;
+}
+.section5 
+{ 
+    width: 100%;
+}
+.footer 
+{ 
+    width: 100%;
+    background: #375e71;
+}
+.header-flex 
+{
+    display: inline-flex;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+ }
+.title 
+{ 
+    flex-basis: 20%;
+    text-align: center;
+}
+.anchor-menu 
+{ 
+    flex-basis: 60%;
+}
+.account 
+{ 
+    flex-basis: 20%;
+    text-align: center;
+}
+.anchor-menu ul 
+{
+    display: inline-flex;
+    list-style: none;
+    padding-left:0;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+.anchor-menu ul li 
+{
+    margin-left: 20px;
+}
+.anchor-menu ul li a
+{ 
+    color: cornsilk;
+
+}
+.account a, .title a
+{
+color: rgb(199, 213, 255);
+padding: 5px;
+/* border:1px solid cornsilk; */
+border-radius: 5px;
+background: rgb(21, 29, 28);
+}
+.account span {
+    color: rgb(199, 213, 255);
+    padding: 5px;
+    /* border:1px solid cornsilk; */
+    border-radius: 5px;
+    background: rgb(21, 29, 28);
+}
+.image-logo 
+{ 
+width: 100%;
+display: flex;
+justify-content: center;
+}
+.info-company span
+{ 
+    display: block;
+line-height: 30px;
+font-size:22px;
+margin-left:20px;
+}
+.image-logo img
+{
+    padding-top: 2%;
+    width: 100%;
+    height: auto;
+    margin: 40px;
+}
+
+.callback-flex 
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+.title-callback h1 
+{
+color:white;
+}
+.data-contact-flex 
+{ 
+    display: flex;
+    flex-direction: row;
+    flex-wrap:wrap;
+}
+.dc-item 
+{ 
+padding: 11px;
+display: flex;
+flex-direction: column;
+align-items: center;
+}
+.dc-item:nth-child(1){
+    background: #80d8ff;
+}
+.dc-item:nth-child(2)
+{
+    background: #82b1ff;
+}
+.dc-item:nth-child(3)
+{
+background:#b388ff;
+}
+.dc-item:nth-child(4)
+{
+background:#ea80fc;
+}
+.callback-end h1 
+{
+color:white;
+padding: 10px;
+text-align: center;
+}
+ .color-icon
+ {
+     color: rgb(209, 0, 0);
+ }
+
+ .question 
+ {
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+  }
+ .title-question 
+ { 
+
+ }
+ .form-q form
+ { 
+     display: flex;
+    flex-direction: column;
+    align-items: center; 
+}
+.submit
+{
+    margin-top:20px;
+}
+ .submit input
+ { 
+padding: 10px;
+font-size: 22px;
+background: paleturquoise;
+ }
+ @media(max-width:890px)
+ {
+     .login-mobile-text{
+         display:none;
+     }
+     
+ }
+ @media(max-width:720px){
+    .login-mobile-login {
+        display: none;
+    }
+ }

@@ -1,0 +1,158 @@
+﻿@{
+    Layout = null;
+    ViewBag.Title = "Информация";
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="~/Content/info-page.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="~/Content/font-awesome.css">
+    <link href="~/Content/googleFont.css" rel="stylesheet" />
+    <title>Информация</title>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="header">
+            <div class="container">
+                <div class="header-flex">
+                    <div class="title">
+                        <a>LIAN</a>
+                    </div>
+                    <div class="anchor-menu">
+                        <ul>
+                            <li><a href="#info-company">О нас </a></li>
+                            <li><a href="#contact">Контакты</a></li>
+                            <li><a href="/">На главную</a></li>
+                        </ul>
+                    </div>
+                    <div class="account">
+                        @if (Session["Login"] == null)
+                        {
+                            <a href="/Auth/Sign">Войти</a>
+                        }
+                        else
+                        {
+                            <span>
+                                <span class="login-mobile-text">Вы:</span> <span class="login-mobile-login">@Session["Login"]</span>
+                                <a href="/Auth/Out">
+                                    <i class="fa fa-sign-out" aria-hidden="true" style="color:red;font-size:20px;cursor:pointer;padding-left:5px">
+
+                                    </i>
+                                </a>
+                            </span>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="section1">
+            <div class="container">
+                <div class="image-logo">
+                    <img src="~/Images/logoforinfo.png" alt="">
+                </div><a name="info-company"></a>
+                <div class="info-company">
+                   <h2 align=center>Информация о компании</h2>
+                    <span>
+                        <b>"LIAN"</b> является региональной торговой компанией, которая специализируется на продаже бытовой техники и электроники по Северо-Кавказскому Федеральному округу. 
+                        <p>В Самом живописном уголке Северного Кавказа группой единомышленников была создана эта компания, которая в 2010 году начала стремительное развитие нового направления региональной сети розничных магазинов бытовой техники и электроники. "LIAN" - торговая компания с площадями, находящиеся в собственности в городах Северо-Кавказского Федерального округа.
+                        <p>С момента выхода на рынок мы четко сформировали свою миссию - предлагать покупателю качественный товар в широком ассортименте по оптимально низким ценам. 
+                            <p>Основной задачей является сопровождение покупателя, и этому способствует система лояльности, налаженная работа торгового персонала, сервисной службы, складской и транспортной логистики. Мы стараемся предложить нашим покупателям самые выгодные условия, комфорт и удобство при покупке бытовой техники и электроники, вкладывая душу и профессионализм. 
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="section3">
+            <div class="container">
+                <div class="callback-flex">
+                    <div class="title-callback">
+                        <h1>Связь с нами</h1><a name="contact"></a>
+                    </div>
+                    <div class="data-contact-flex">
+                        <div class="dc-item">
+                            <div class="dc-item-icon">
+                                <i class="fa fa-envelope color-icon" aria-hidden="true"></i>
+                            </div>
+                            <div class="dc-item-text">
+                                shkarpetovd@mail.ru
+                            </div> 
+                        </div>
+                        <div class="dc-item"> 
+                            <div class="dc-item-icon">
+                                <i class="fa fa-phone color-icon" aria-hidden="true"></i>
+                        </div>
+                        <div class="dc-item-text">
+                            89283533269
+                        </div>
+                    </div>
+                        <div class="dc-item">
+                            <div class="dc-item-icon">
+                                <i class="fa fa-vk color-icon" aria-hidden="true"></i>
+                            </div>
+                            <div class="dc-item-text">
+                                vk.com/patheon
+                            </div> 
+                        </div>
+                        <div class="dc-item">
+                            <div class="dc-item-icon">
+                                <i class="fa fa-instagram color-icon" aria-hidden="true"></i>
+                            </div>
+                            <div class="dc-item-text">
+                             e.x.ception_   
+                            </div> 
+                        </div>
+                    </div>
+                    <div class="callback-end">
+                        <h1>Мы ответим вам в течении 24 часов!</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="section4">
+            <div class="container">
+                <div class="question">
+                    @if (Session["Login"] == null)
+                    {
+                        <h2 style="color:white">Чтобы задать вопрос, необходимо авторизоваться!</h2>
+                    }
+                    else
+                    {
+                        if (ViewBag.AnswerRequest == true)
+                        {
+                            <h2 style="color:white">Спасибо за обращение!</h2>
+                        }
+                        else
+                        {
+                            <div class="title-question">
+                                <h2>Задайте свой вопрос</h2>
+                            </div>
+                            <div class="form-q">
+                                <form action="/Info/UserAnswer" method="POST">
+                                    <div>
+                                        <textarea name="answer" id="answer" cols="50" rows="5"></textarea>
+                                    </div>
+                                    <div class="submit">
+                                        <input type="submit" value="Отправить">
+                                    </div>
+                                </form>
+                            </div>
+                        }
+                    }
+
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <div class="container">
+                <div align=center style="padding: 10px;color:cyan;font-size: 22px;">
+                    <i class="fa fa-times" aria-hidden="true" style="color:orange"></i>
+                    LIAN
+                    <i class="fa fa-times" aria-hidden="true" style="color:orange"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

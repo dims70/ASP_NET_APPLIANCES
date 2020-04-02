@@ -1,0 +1,40 @@
+﻿@model DataUsers
+@{ 
+    ViewBag.Title = "Аккаунт";
+}
+<div class="account">
+    <div class="container">
+        <div class="account-main">
+            @if (Session["Login"] != null)
+            {
+                <div class="ac-main-row1">
+                    <div class="photo">
+                        <img src="../main-background.jpg" alt="Изображение отсутствует" width="100%" height="100%">
+                    </div>
+                    <div class="main-data">
+                        <span>Логин: @AuthUser.Login</span>
+                        <span>Фамилия: @Model.Surname</span>
+                        <span>Имя: @Model.Name</span>
+                        <span>Отчество: @Model.Patronymic</span>
+                        <span>Почта: @AuthUser.Email</span>
+                       
+                    </div>
+                </div>
+                <div class="ac-main-row2">
+                    <div class="main-data-1">
+                        <span>Дата рождения: @Model.DateBirth.ToShortDateString()</span>
+                        <span>Город: @Model.City</span>
+                        <span>Регион: @Model.Region</span>
+                        <span>Адрес: @Model.Adress</span>
+                    </div>
+                </div>
+            }
+            else
+            {
+                <div style="padding:200px">
+                    <span style="font-size:30px">Для просмотра пользовательской информации войдите в аккаунт!</span>
+                </div>
+            }
+        </div>
+    </div>
+</div>

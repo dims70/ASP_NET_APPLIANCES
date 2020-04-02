@@ -1,0 +1,45 @@
+﻿@{
+    Layout = null;
+    ViewBag.Title = "Регистрация";
+}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="~/Content/reg.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Sniglet&display=swap" rel="stylesheet">
+    <link href="~/Content/googleFont.css" rel="stylesheet" />
+    <title>Вход</title>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="header">
+            <h3 class="sign-in">Регистрация</h3>
+            <div class="button">
+                <a href="/Auth/Sign" style="text-decoration: none; color:inherit;">Вход</a>
+            </div>
+        </div>
+
+        <form action="/AuthController/Reg" method="POST">
+            <div>
+                <input class="user-input" type="text" name="login1" id="name" placeholder="Логин" />
+            </div>
+            <div>
+                <input type="password" name="pass1" id="name" placeholder="Пароль" />
+            </div>
+            <div>
+                <input type="password" name="rpass1" id="name" placeholder="Повторите пароль" />
+            </div>
+            <div>
+                <input type="text" name="email" class="user-input" placeholder="Эл.почта" />
+            </div>
+            <div>
+                <input type="submit" value="Регистрация" />
+            </div>
+
+        </form>
+    </div>
+
+</body>
+</html>
