@@ -8,10 +8,12 @@ namespace AppliancesWEB.Controllers
 {
     public class HomeController : Controller
     {
+        AppliancesContext db = new AppliancesContext();
         public ActionResult Index()
-        {
+        {   
             ViewBag.Title = "Главная";
-            return View();
+            var eqmain = db.Equipments.Take(6).ToList();
+            return View(eqmain);
         }
 
     }

@@ -1,4 +1,5 @@
-﻿<div class="main">
+﻿@model List<Equipments>
+<div class="main">
     <div class="container">
         <div class="main-content">
             <div>
@@ -7,82 +8,78 @@
             <div class="main-container">
                 <div class="main-container-item">
                     <div class="main-item-img">
-                        <img src="main-background.jpg" alt="" width="100%">
+                        <img src="~/Images/EquipmentsPhoto/@Model[0].imageEquipmentPath" alt="" width="100%">
                     </div>
                     <div class="main-item-title">
                         <div class="item-title">
-                            <h3>Название</h3>
+                            <h5>@Model[0].Name</h5>
                         </div>
                         <div class="cost">
-                            cost
-
+                            @Model[0].Cost
                         </div>
                     </div>
                     <div class="text">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                        @Model[0].Description
                     </div>
                     <div class="btn-info-item">
-                        <a href="" ">Подробности..</a>
+                        <a href="~/Catalog/@Model[0].idEquipment">Подробности..</a>
                     </div>
                 </div>
                 <div class="main-container-item">
                     <div class="main-item-img">
-                        <img src="main-background.jpg" alt="" width="100%">
+                        <img src="~/Images/EquipmentsPhoto/@Model[1].imageEquipmentPath" alt="" width="100%" height="100%">
                     </div>
                     <div class="main-item-title">
                         <div class="item-title">
-                            <h3>Название</h3>
+                            <h5>@Model[1].Name</h5>
                         </div>
                         <div class="cost">
-                            cost
-
+                            @Model[1].Cost
                         </div>
                     </div>
                     <div class="text">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                        @Model[1].Description
                     </div>
                     <div class="btn-info-item">
-                        <a href="" ">Подробности..</a>
+                        <a href="~/Catalog/@Model[1].idEquipment">Подробности..</a>
                     </div>
                 </div>
                 <div class="main-container-item">
                     <div class="main-item-img">
-                        <img src="main-background.jpg" alt="" width="100%">
+                        <img src="~/Images/EquipmentsPhoto/@Model[2].imageEquipmentPath" alt="" width="100%">
                     </div>
                     <div class="main-item-title">
                         <div class="item-title">
-                            <h3>Название</h3>
+                            <h5>@Model[2].Name</h5>
                         </div>
                         <div class="cost">
-                            cost
-
+                            @Model[2].Cost
                         </div>
                     </div>
                     <div class="text">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                        @Model[2].Description
                     </div>
                     <div class="btn-info-item">
-                        <a href="" ">Подробности..</a>
+                        <a href="~/Catalog/@Model[2].idEquipment">Подробности..</a>
                     </div>
                 </div>
                 <div class="main-container-item">
                     <div class="main-item-img">
-                        <img src="main-background.jpg" alt="" width="100%">
+                        <img src="~/Images/EquipmentsPhoto/@Model[3].imageEquipmentPath" alt="" width="100%">
                     </div>
                     <div class="main-item-title">
                         <div class="item-title">
-                            <h3>Название</h3>
+                            <h5>@Model[3].Name</h5>
                         </div>
                         <div class="cost">
-                            cost
-
+                            @Model[3].Cost
                         </div>
                     </div>
                     <div class="text">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                        @Model[3].Description
                     </div>
                     <div class="btn-info-item">
-                        <a href="" ">Подробности..</a>
+                        <a href="~/Catalog/@Model[3].idEquipment">Подробности..</a>
                     </div>
                 </div>
             </div>
@@ -118,11 +115,16 @@
             <div class="section2-content">
                 <div class="section2-row1">
                     <div class="s2-row1-image">
-                        <img src="main-background.jpg" alt="" width="100%" height="100%">
+                        <div class="s2-row1-image-name">
+                            <h5>
+                                @Model[4].Name @Model[4].Cost  р.
+                            </h5>
+                        </div>
+                        <img src="~/Images/EquipmentsPhoto/@Model[4].imageEquipmentPath" alt="" width="100%" height="100%">
                     </div>
                     <div class="s2-row1-text">
                         <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas cum explicabo dolore aut ipsum in temporibus dolor aliquam eligendi veniam nulla omnis fugit suscipit, odio minus corrupti aspernatur distinctio placeat?</span>
-                        <a href="" class="btn-user-buy">
+                        <a href="~/Catalog/@Model[4].idEquipment" class="btn-user-buy">
                             <b>= Подробнее =</b>
                         </a>
                     </div>
@@ -130,12 +132,17 @@
                 <div class="section2-row2">
                     <div class="s2-row1-text">
                         <span>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Illo odit excepturi rem quia inventore autem repudiandae quam aliquid iure, numquam, aperiam, ex sint facere perferendis beatae earum hic dolorem! Quas.</span>
-                        <a href="" class="btn-user-buy">
+                        <a href="~/Catalog/@Model[5].idEquipment" class="btn-user-buy">
                             <b>= Подробнее =</b>
                         </a>
                     </div>
                     <div class="s2-row1-image">
-                        <img src="main-background.jpg" alt="" width="100%" height="100%">
+                        <div class="s2-row1-image-name">
+                            <h5>
+                                @Model[5].Name @Model[5].Cost  р.
+                            </h5>
+                        </div>
+                        <img src="~/Images/EquipmentsPhoto/@Model[5].imageEquipmentPath" alt="" width="100%" height="100%">
                     </div>
                 </div>
             </div>

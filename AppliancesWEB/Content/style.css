@@ -287,6 +287,18 @@ padding: 0px;
     border-radius: 10px 10px 0px 0px;
 }
 
+.main-item-img{
+    width:200px;
+    height:200px;
+    position:relative;
+}
+.title-photo-cen{
+    background:orange;
+    position:absolute;
+    margin-top:10px;
+    padding:5px;
+}
+
 .section1 {
     width: 100%;
     height: auto;
@@ -444,6 +456,20 @@ padding: 0px;
 .s2-row1-image {
     width: 200px;
     height: 200px;
+    position:relative;
+}
+
+.s2-row1-image-name{
+    
+    position:absolute;
+    padding:5px;
+    background:orange;
+    bottom:0px;
+}
+
+.s2-row1-image-name h5{
+    margin-top:0px;
+    margin-bottom:0px;
 }
 
 .s2-row1-text {

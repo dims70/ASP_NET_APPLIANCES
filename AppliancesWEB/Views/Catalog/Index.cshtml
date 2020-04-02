@@ -26,7 +26,11 @@
             @foreach(var eq in Model) {
                 <div class="main-container-item">
                 <div class="main-item-img">
-                    <img src="~/Images/main-background.jpg" alt="" width="100%" height="100%">
+                    @if (eq.StateEquipment == "Уценка")
+                    {
+                    <div class="title-photo-cen">Уценка 25%!</div>
+                    }
+                    <img src="~/Images/EquipmentsPhoto/@eq.imageEquipmentPath" alt="Не удалось загрузить изображение" width="100%" height="100%">
                 </div>
                 <div class="main-item-title">
                     <div class="item-title">
