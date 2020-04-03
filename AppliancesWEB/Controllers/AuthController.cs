@@ -14,6 +14,25 @@ namespace AppliancesWEB.Controllers
             Referrer.UrlReferrer = Request.UrlReferrer+"";
             return View();
         }
+        [HttpPost]
+        public ActionResult Reg(Models.DataUserForReg dataUserSummary)
+        {
+            if (ModelState.IsValid)
+            {
+                db.AuthUsers.Add(dataUserSummary.AuthUser);
+                db.SaveChanges();
+                var lastID = db.AuthUsers.ToList()[db.AuthUsers.Count()-1].idUser;
+                dataUserSummary.DataUser.idUser = lastID;
+                dataUserSummary.PayData.idUser = lastID;
+                db.DataUsers.Add(dataUserSummary.DataUser);
+                db.PayData.Add(dataUserSummary.PayData);
+                db.SaveChanges();
+                return RedirectToAction("Index","Home");
+            }
+                return View("Registration", dataUserSummary);
+
+        }
+        
         public ActionResult Registration()
         {
             return View();
@@ -38,11 +57,7 @@ namespace AppliancesWEB.Controllers
             Session["ErrorAuth"] = true;
             return View("Sign");
         }
-        [HttpPost]
-        public ActionResult Reg()
-        {
-            return View();
-        }
+        
         public ActionResult Out()
         {
             Session["Login"] = null;

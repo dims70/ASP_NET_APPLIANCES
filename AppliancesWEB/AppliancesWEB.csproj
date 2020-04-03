@@ -153,6 +153,7 @@
     <Compile Include="EF\Orders.cs" />
     <Compile Include="EF\PayData.cs" />
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\DataUserForReg.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="EF\Statuses.cs" />
     <Compile Include="EF\Suppliers.cs" />
@@ -209,6 +210,7 @@
     <None Include="Views\Auth\Sign.cshtml" />
     <None Include="Views\Auth\Registration.cshtml" />
     <Content Include="Views\Catalog\Index.cshtml" />
+    <Content Include="Views\Catalog\Equip.cshtml" />
     <None Include="Views\Info\InfoPage.cshtml" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">

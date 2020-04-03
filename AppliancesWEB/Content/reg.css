@@ -1,136 +1,159 @@
 *, *:after, *:before {
-  box-sizing: border-box;
-  font-family: 'Google Sans', sans-serif;
+    box-sizing: border-box;
+    font-family: 'Google Sans', sans-serif;
 }
 
 html, body {
-  background: #1a1f25;
-  font-family: 'Roboto', sans-serif;
+    background: #1a1f25;
+    font-family: 'Roboto', sans-serif;
 }
 
 .clear {
-  clear: both;
+    clear: both;
 }
 
 #man-people-user, #lock-locker {
-  fill: white;
+    fill: white;
 }
 
 .wrapper {
-  width: 300px;
-  margin: 12% auto;
+    width: 300px;
+    margin: 12% auto;
 }
 
 form {
-  position: relative;
+    position: relative;
 }
 
 .clear {
-  clear: both;
+    clear: both;
 }
 
 .sign-in {
-  float: left;
-  color: white;
-  font-size: 1.3em;
+    float: left;
+    color: white;
+    font-size: 1.3em;
 }
 
 .button {
-  float: right;
-  color: #7f8084;
-  border: 1px solid #22272d;
-  padding: 7px 15px;
-  border-radius: 3px;
-  font-size: 0.8em;
-  cursor: pointer;
-  position: relative;
-  z-index: 99;
+    float: right;
+    color: #7f8084;
+    border: 1px solid #22272d;
+    padding: 7px 15px;
+    border-radius: 3px;
+    font-size: 0.8em;
+    cursor: pointer;
+    position: relative;
+    z-index: 99;
 }
 
-.button:hover {
-  color: #d3d3d3;
-}
+    .button:hover {
+        color: #d3d3d3;
+    }
 
 .lock {
-  position: absolute;
-  width: 30px;
-  height: 30px;
-  margin-top: 10px;
-  padding: 7px;
-  left: 5px;
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    margin-top: 10px;
+    padding: 7px;
+    left: 5px;
 }
-.lock::after {
-  content: "";
-  width: 1px;
-  height: 30px;
-  position: absolute;
-  background: #22272d;
-  top: 0px;
-  left: 100%;
-}
+
+    .lock::after {
+        content: "";
+        width: 1px;
+        height: 30px;
+        position: absolute;
+        background: #22272d;
+        top: 0px;
+        left: 100%;
+    }
 
 .user {
-  position: absolute;
-  width: 30px;
-  height: 30px;
-  margin-top: 10px;
-  padding: 7px;
-  left: 5px;
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    margin-top: 10px;
+    padding: 7px;
+    left: 5px;
 }
-.user::after {
-  content: "";
-  width: 1px;
-  height: 30px;
-  position: absolute;
-  background: #22272d;
-  top: 0px;
-  left: 100%;
-}
+
+    .user::after {
+        content: "";
+        width: 1px;
+        height: 30px;
+        position: absolute;
+        background: #22272d;
+        top: 0px;
+        left: 100%;
+    }
 
 input {
-  width: 100%;
-  padding: 5px;
-  height: 40px;
-  border-radius: 3px;
-  margin: 5px 0;
-  outline: none;
+    width: 100%;
+    padding: 5px;
+    height: 40px;
+    border-radius: 3px;
+    margin: 5px 0;
+    outline: none;
 }
 
-input[type="text"]:focus, input[type="password"]:focus, input[type="email"]:focus {
-  border: 1px solid white;
-  box-shadow: none;
-}
+    input[type="text"]:focus, input[type="password"]:focus, input[type="email"]:focus {
+        border: 1px solid white;
+        box-shadow: none;
+    }
 
 .user-input:focus .user {
-  background: white !important;
+    background: white !important;
 }
 
 input[type="text"] {
-  background: transparent;
-  border: 2px solid #22272d;
-  padding-left: 15px;
-  color: #e6b333;
+    background: transparent;
+    border: 2px solid #22272d;
+    padding-left: 15px;
+    color: #e6b333;
+}
+
+#dateb {
+    background: transparent;
+    border: 2px solid #22272d;
+    padding-left: 15px;
+    color: #e6b333;
 }
 
 input[type="password"] {
-  background: transparent;
-  border: 2px solid #22272d;
-  padding-left: 15px;
-  color: #e6b333;
+    background: transparent;
+    border: 2px solid #22272d;
+    padding-left: 15px;
+    color: #e6b333;
 }
 
 input[type="submit"] {
-  background: #e6b333;
-  border: none;
-  color: white;
-  text-align: center;
-  font-size: 0.8em;
-  cursor: pointer;
+    background: #e6b333;
+    border: none;
+    color: white;
+    text-align: center;
+    font-size: 0.8em;
+    cursor: pointer;
 }
 
 input[type="email"] {
-  background: transparent;
-  border: 2px solid #22272d;
-  padding-left: 15px;
-  color: #e6b333;
+    background: transparent;
+    border: 2px solid #22272d;
+    padding-left: 15px;
+    color: #e6b333;
 }
+
+
+.validation-summary-errors ul {
+    padding-left:0px;
+    list-style: none;
+}
+
+.validation-summary-errors {
+    width: 400px;
+    color: orangered;
+}
+    .validation-summary-errors ul li{
+        margin-top:10px;
+    }

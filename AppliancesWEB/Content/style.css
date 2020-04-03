@@ -37,11 +37,11 @@ z-index:10;
 .img-logo{
     filter: invert(1);
 }
-.main{
-background: green;
-display: inline-flex;
-background: url('/Images/main-background.jpg');
-height: auto;
+.main {
+    background: green;
+    display: inline-flex;
+    background: linear-gradient(-45deg, white 55%, yellow 10%);
+    height: auto;
 }
 .footer{
 background: linear-gradient(grey 1%,#1f3942 2%);
@@ -132,6 +132,7 @@ height: 100%;
     width:15%;
     background: #617dc5;
     color: white;
+    cursor:pointer;
 }
 .footer-container{
     display: inline-flex;
@@ -302,7 +303,7 @@ padding: 0px;
 .section1 {
     width: 100%;
     height: auto;
-    background: lightgreen;
+    background: linear-gradient(-45deg, lightgreen 55%, transparent 10%);
     display: flex;
 }
 
@@ -369,12 +370,14 @@ padding: 0px;
 .main-container-item {
     width: 200px;
     height: 300px;
-    background: #bfbc63;
+    background: #ff7f02;
     margin: 20px;
     display: flex;
     flex-direction: column;
-    border: 8px solid #bfbc63;
-    justify-content: space-around;
+    border: 2px solid #a9a9a9;
+    justify-content: space-between;
+    box-sizing:border-box;
+    overflow:hidden;
 }
 
 .cost {
@@ -419,7 +422,7 @@ padding: 0px;
 .section2 {
     width: 100%;
     height: auto;
-    background: #1f2742;
+    background: linear-gradient(45deg, black 49%, #1f2742 10%);
     display: flex;
 }
 
@@ -480,9 +483,7 @@ padding: 0px;
 }
 
 /* -----------------------------вюярхвмне опедярюбкемхе - хмдейя--------------------------- */
-
 /*------------------------------вюярхвмне опедярюбкемхе - мнбнярх--------------------------*/
-
 .news {
     display: flex;
     width: 100%;
@@ -563,8 +564,8 @@ padding: 0px;
 .catalog {
     width: 100%;
     height: auto;
-    background: #acdff2 ;
-    display:flex;
+    background: #0a1114;
+    display: flex;
 }
 
 .catalog-content {
@@ -595,8 +596,51 @@ input[name="btn-submit-filter"] {
     background:rgba(255, 251, 0, 0.342);
 }
 
+/*------------------------------вюярхвмне опедярюбкемхе - хмтнплюжхъ на ндмнл рнбюпе------------------------*/
 
-/*------------------------------вюярхвмне опедярюбкемхе - йюрюкнц--------------------------*/
+.equipment {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    background: rgb(36, 94, 102);
+    color: cornsilk;
+}
+
+.equipment-content {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    background: rgb(36, 94, 102);
+    align-items: center;
+    padding-bottom:20px;
+}
+
+.title-equipment {
+}
+
+.equipment-photo {
+    width: 100%;
+    height: auto;
+}
+
+.buy {
+    width: 200px;
+    height: 30px;
+}
+
+.buya {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgb(192, 222, 135);
+}
+
+/*------------------------------вюярхвмне опедярюбкемхе - хмтнплюжхъ на ндмнл рнбюпе------------------------*/
+
+/*------------------------------вюярхвмне опедярюбкемхе - йюрюкнц-------------------------------------------*/
 
 @media (max-width:921px){
     .header-menu ul{

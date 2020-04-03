@@ -19,10 +19,10 @@ namespace AppliancesWEB
         [Required]
         [StringLength(50)]
         public string Name { get; set; }
-
+        [Required]
         [StringLength(50)]
         public string Patronymic { get; set; }
-
+        [Required]
         public DateTime DateBirth { get; set; }
 
         [Required]

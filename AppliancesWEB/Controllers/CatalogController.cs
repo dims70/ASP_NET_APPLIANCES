@@ -49,9 +49,13 @@ namespace AppliancesWEB.Controllers
                     else return RedirectToAction("Index");
                 }
             }
-            return RedirectToAction("Index");
-            
-            
+            return RedirectToAction("Index"); 
         }
+        [HttpGet]
+        public ActionResult Equip(int id)
+        { var eq = db.Equipments.Where(e => e.idEquipment == id).ToList()[0];
+            return View("Equip", eq);
+        }
+
     }
 }

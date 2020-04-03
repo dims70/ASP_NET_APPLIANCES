@@ -1,45 +1,83 @@
-﻿@{
+﻿@model AppliancesWEB.Models.DataUserForReg
+@{
     Layout = null;
     ViewBag.Title = "Регистрация";
-}
+} 
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="~/Content/reg.css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:500&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=0.5, maximum-scale=0.75">
     <link href="https://fonts.googleapis.com/css?family=Sniglet&display=swap" rel="stylesheet">
     <link href="~/Content/googleFont.css" rel="stylesheet" />
-    <title>Вход</title>
+    <title>ViewBag.Title</title>
 </head>
 <body>
     <div class="wrapper">
         <div class="header">
-            <h3 class="sign-in">Регистрация</h3>
-            <div class="button">
-                <a href="/Auth/Sign" style="text-decoration: none; color:inherit;">Вход</a>
+            @Html.ValidationSummary()
+                <h3 class="sign-in">Регистрация</h3>
+                <div class="button">
+                    <a href="/Auth/Sign" style="text-decoration: none; color:inherit;">Вход</a>
+                </div>
             </div>
-        </div>
+        
+        <form action="~/Auth/Reg" method="POST">
+            <div>
+                @Html.TextBoxFor(Model => Model.AuthUser.Login, new { placeholder = "Введите логин" })
+            </div>
+            <div>
+                @Html.TextBoxFor(Model => Model.AuthUser.Password, new { placeholder = "Введите пароль" })
+            </div>
+            <div>
+                @Html.TextBoxFor(Model => Model.AuthUser.Email, new { placeholder = "Введите почту" })
+            </div>
+            <div class="header">
+                <h3 class="sign-in">Пользовательские данные</h3>
+            </div>
+            <div>
+                @Html.TextBoxFor(Model => Model.DataUser.Surname, new { placeholder = "Фамилия" })
+            </div>
+            <div>
+                @Html.TextBoxFor(Model => Model.DataUser.Name, new { placeholder = "Имя" })
+            </div>
+            <div>
+                @Html.TextBoxFor(Model => Model.DataUser.Patronymic, new { placeholder = "Отчество" })
+            </div>
+            <div>
+                @Html.TextBoxFor(Model => Model.DataUser.DateBirth, new { placeholder = "Дата рождения" })
+            </div>
+            <div>
+                @Html.TextBoxFor(Model => Model.DataUser.City, new { placeholder = "Город" })
+            </div>
+            <div>
+                @Html.TextBoxFor(Model => Model.DataUser.Region, new { placeholder = "Регион" })
+            </div>
+            <div>
+                @Html.TextBoxFor(Model => Model.DataUser.Adress, new { placeholder = "Адрес" })
+            </div>
+            <div class="header">
+                <h3 class="sign-in">Платежные данные</h3>
+            </div>
+            <div>
+                @Html.TextBoxFor(Model => Model.PayData.NumberCard, new { placeholder = "Номер карты" })
+            </div>
+            <div>
+                @Html.TextBoxFor(Model => Model.PayData.Holder, new { placeholder = "Владелец" })
+            </div>
+            <div>
+                @Html.TextBoxFor(Model => Model.PayData.DateEnd, new { placeholder = "Дата окончания" })
+            </div>
+            <div>
+                @Html.TextBoxFor(Model => Model.PayData.CVC, new { placeholder = "CVC" })
+            </div>
 
-        <form action="/AuthController/Reg" method="POST">
-            <div>
-                <input class="user-input" type="text" name="login1" id="name" placeholder="Логин" />
-            </div>
-            <div>
-                <input type="password" name="pass1" id="name" placeholder="Пароль" />
-            </div>
-            <div>
-                <input type="password" name="rpass1" id="name" placeholder="Повторите пароль" />
-            </div>
-            <div>
-                <input type="text" name="email" class="user-input" placeholder="Эл.почта" />
-            </div>
             <div>
                 <input type="submit" value="Регистрация" />
             </div>
-
         </form>
     </div>
-
 </body>
 </html>
