@@ -23,8 +23,10 @@
                     </div>
                     <div class="search-container">
                         <div class="search">
-                            <input type="text" name="search" id="search" placeholder="Найти что-нибудь...">
-                            <button type="submit" class="btn-search"><i class="fa fa-search"></i></button>
+                            <form action="~/Catalog/Search" method="get" class="search">
+                                <input type="text" name="search" id="search" placeholder="Найти что-нибудь...">
+                                <button type="submit" class="btn-search"><i class="fa fa-search"></i></button>
+                            </form>
                         </div>
                     </div>
                     <div class="header-menu">

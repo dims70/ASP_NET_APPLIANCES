@@ -6,7 +6,7 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <TimeStampOfAssociatedLegacyPublishXmlFile />
-    <_PublishTargetUrl>C:\Users\Димас\Documents</_PublishTargetUrl>
+    <_PublishTargetUrl>C:\Users\Димас\Desktop\Новая папка</_PublishTargetUrl>
   </PropertyGroup>
   <ItemGroup>
     <File Include="bin/Antlr3.Runtime.dll">
@@ -16,10 +16,10 @@
       <publishTime>04/02/2020 10:23:54</publishTime>
     </File>
     <File Include="bin/AppliancesWEB.dll">
-      <publishTime>04/02/2020 17:29:37</publishTime>
+      <publishTime>04/03/2020 20:21:30</publishTime>
     </File>
     <File Include="bin/AppliancesWEB.pdb">
-      <publishTime>04/02/2020 17:29:37</publishTime>
+      <publishTime>04/03/2020 20:21:30</publishTime>
     </File>
     <File Include="bin/EntityFramework.dll">
       <publishTime>04/02/2020 10:23:57</publishTime>
@@ -235,10 +235,10 @@
       <publishTime>04/02/2020 10:23:41</publishTime>
     </File>
     <File Include="Content/reg.css">
-      <publishTime>04/02/2020 10:23:41</publishTime>
+      <publishTime>04/03/2020 20:16:02</publishTime>
     </File>
     <File Include="Content/style.css">
-      <publishTime>04/02/2020 15:39:50</publishTime>
+      <publishTime>04/03/2020 20:09:13</publishTime>
     </File>
     <File Include="favicon.ico">
       <publishTime>04/02/2020 10:23:53</publishTime>
@@ -374,6 +374,9 @@
     </File>
     <File Include="Views/Account/Info.cshtml">
       <publishTime>04/02/2020 11:53:10</publishTime>
+    </File>
+    <File Include="Views/Catalog/Equip.cshtml">
+      <publishTime>04/03/2020 14:47:13</publishTime>
     </File>
     <File Include="Views/Catalog/Index.cshtml">
       <publishTime>04/02/2020 14:43:13</publishTime>

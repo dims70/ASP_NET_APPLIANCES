@@ -56,6 +56,11 @@ namespace AppliancesWEB.Controllers
         { var eq = db.Equipments.Where(e => e.idEquipment == id).ToList()[0];
             return View("Equip", eq);
         }
-
+        [HttpGet]
+        public ActionResult Search(string search)
+        {
+            var listSearch = db.Equipments.Where(x => x.Name.Contains(search)).ToList();
+            return View("Index", listSearch);
+        }
     }
 }
