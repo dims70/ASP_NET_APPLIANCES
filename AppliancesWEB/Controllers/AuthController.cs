@@ -1,7 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using AppliancesWEB.Models;
 using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 
 namespace AppliancesWEB.Controllers
@@ -15,21 +13,24 @@ namespace AppliancesWEB.Controllers
             return View();
         }
         [HttpPost]
-        public ActionResult Reg(Models.DataUserForReg dataUserSummary)
+        public ActionResult Reg(DataUserForReg Model)
         {
             if (ModelState.IsValid)
             {
-                db.AuthUsers.Add(dataUserSummary.AuthUser);
+                db.AuthUsers.Add(Model.AuthUser);
                 db.SaveChanges();
                 var lastID = db.AuthUsers.ToList()[db.AuthUsers.Count()-1].idUser;
-                dataUserSummary.DataUser.idUser = lastID;
-                dataUserSummary.PayData.idUser = lastID;
-                db.DataUsers.Add(dataUserSummary.DataUser);
-                db.PayData.Add(dataUserSummary.PayData);
+                Model.DataUser.idUser = lastID;
+                Model.PayData.idUser = lastID;
+                db.DataUsers.Add(Model.DataUser);
+                db.PayData.Add(Model.PayData);
                 db.SaveChanges();
+                Model.AuthUser = null;
+                Model.DataUser = null;
+                Model.PayData = null;
                 return RedirectToAction("Index","Home");
             }
-                return View("Registration", dataUserSummary);
+                return View("Registration");
 
         }
         
@@ -52,7 +53,11 @@ namespace AppliancesWEB.Controllers
                 AuthUser.Login = authUser[0].Login;
                 AuthUser.Email = authUser[0].Email;
                 Session["Login"] = authUser[0].Login;
+                if(Referrer.UrlReferrer!=null)
+                { 
                return Redirect(Referrer.UrlReferrer);
+                }
+                return RedirectToAction("Home","Index");
             }
             Session["ErrorAuth"] = true;
             return View("Sign");

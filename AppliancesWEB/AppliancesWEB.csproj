@@ -164,6 +164,7 @@
     <Content Include="App_Data\Appliances_log.ldf">
       <DependentUpon>Appliances.mdf</DependentUpon>
     </Content>
+    <Content Include="Images\EquipmentsPhoto\2.jpg" />
     <Content Include="Content\font-awesome.css" />
     <Content Include="Content\googleFont.css" />
     <Content Include="Content\in.css" />
@@ -177,7 +178,6 @@
     <Content Include="Images\EquipmentsPhoto\13.jpg" />
     <Content Include="Images\EquipmentsPhoto\14.jpg" />
     <Content Include="Images\EquipmentsPhoto\15.jpg" />
-    <Content Include="Images\EquipmentsPhoto\2.jpg" />
     <Content Include="Images\EquipmentsPhoto\3.jpg" />
     <Content Include="Images\EquipmentsPhoto\4.jpg" />
     <Content Include="Images\EquipmentsPhoto\5.jpg" />

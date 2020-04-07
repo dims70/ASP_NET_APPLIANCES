@@ -1,4 +1,5 @@
-﻿@model AppliancesWEB.Models.DataUserForReg
+﻿@using System.Threading;
+@model AppliancesWEB.Models.DataUserForReg
 @{
     Layout = null;
     ViewBag.Title = "Регистрация";
@@ -12,72 +13,82 @@
     <meta name="viewport" content="width=device-width, initial-scale=0.5, maximum-scale=0.75">
     <link href="https://fonts.googleapis.com/css?family=Sniglet&display=swap" rel="stylesheet">
     <link href="~/Content/googleFont.css" rel="stylesheet" />
-    <title>ViewBag.Title</title>
+    <title>@ViewBag.Title</title>
 </head>
 <body>
     <div class="wrapper">
-        <div class="header">
-            @Html.ValidationSummary()
+        @if (Session["Login"] == null)
+        {
+            <div class="header">
+
+                @Html.ValidationSummary()
                 <h3 class="sign-in">Регистрация</h3>
                 <div class="button">
                     <a href="/Auth/Sign" style="text-decoration: none; color:inherit;">Вход</a>
                 </div>
             </div>
-        
-        <form action="~/Auth/Reg" method="POST">
-            <div>
-                @Html.TextBoxFor(Model => Model.AuthUser.Login, new { placeholder = "Введите логин" })
-            </div>
-            <div>
-                @Html.TextBoxFor(Model => Model.AuthUser.Password, new { placeholder = "Введите пароль" })
-            </div>
-            <div>
-                @Html.TextBoxFor(Model => Model.AuthUser.Email, new { placeholder = "Введите почту" })
-            </div>
-            <div class="header">
-                <h3 class="sign-in">Пользовательские данные</h3>
-            </div>
-            <div>
-                @Html.TextBoxFor(Model => Model.DataUser.Surname, new { placeholder = "Фамилия" })
-            </div>
-            <div>
-                @Html.TextBoxFor(Model => Model.DataUser.Name, new { placeholder = "Имя" })
-            </div>
-            <div>
-                @Html.TextBoxFor(Model => Model.DataUser.Patronymic, new { placeholder = "Отчество" })
-            </div>
-            <div>
-                @Html.TextBoxFor(Model => Model.DataUser.DateBirth, new { placeholder = "Дата рождения" })
-            </div>
-            <div>
-                @Html.TextBoxFor(Model => Model.DataUser.City, new { placeholder = "Город" })
-            </div>
-            <div>
-                @Html.TextBoxFor(Model => Model.DataUser.Region, new { placeholder = "Регион" })
-            </div>
-            <div>
-                @Html.TextBoxFor(Model => Model.DataUser.Adress, new { placeholder = "Адрес" })
-            </div>
-            <div class="header">
-                <h3 class="sign-in">Платежные данные</h3>
-            </div>
-            <div>
-                @Html.TextBoxFor(Model => Model.PayData.NumberCard, new { placeholder = "Номер карты" })
-            </div>
-            <div>
-                @Html.TextBoxFor(Model => Model.PayData.Holder, new { placeholder = "Владелец" })
-            </div>
-            <div>
-                @Html.TextBoxFor(Model => Model.PayData.DateEnd, new { placeholder = "Дата окончания" })
-            </div>
-            <div>
-                @Html.TextBoxFor(Model => Model.PayData.CVC, new { placeholder = "CVC" })
-            </div>
 
-            <div>
-                <input type="submit" value="Регистрация" />
-            </div>
-        </form>
-    </div>
-</body>
+            <form action="~/Auth/Reg" method="POST">
+                <div>
+                    @Html.TextBoxFor(Model => Model.AuthUser.Login, new { placeholder = "Введите логин" })
+                </div>
+                <div>
+                    @Html.TextBoxFor(Model => Model.AuthUser.Password, new { placeholder = "Введите пароль" })
+                </div>
+                <div>
+                    @Html.TextBoxFor(Model => Model.AuthUser.Email, new { placeholder = "Введите почту" })
+                </div>
+                <div class="header">
+                    <h3 class="sign-in">Пользовательские данные</h3>
+                </div>
+                <div>
+                    @Html.TextBoxFor(Model => Model.DataUser.Surname, new { placeholder = "Фамилия" })
+                </div>
+                <div>
+                    @Html.TextBoxFor(Model => Model.DataUser.Name, new { placeholder = "Имя" })
+                </div>
+                <div>
+                    @Html.TextBoxFor(Model => Model.DataUser.Patronymic, new { placeholder = "Отчество" })
+                </div>
+                <div>
+                    @Html.TextBoxFor(Model => Model.DataUser.DateBirth, new { placeholder = "Дата рождения" })
+                </div>
+                <div>
+                    @Html.TextBoxFor(Model => Model.DataUser.City, new { placeholder = "Город" })
+                </div>
+                <div>
+                    @Html.TextBoxFor(Model => Model.DataUser.Region, new { placeholder = "Регион" })
+                </div>
+                <div>
+                    @Html.TextBoxFor(Model => Model.DataUser.Adress, new { placeholder = "Адрес" })
+                </div>
+                <div class="header">
+                    <h3 class="sign-in">Платежные данные</h3>
+                </div>
+                <div>
+                    @Html.TextBoxFor(Model => Model.PayData.NumberCard, new { placeholder = "Номер карты" })
+                </div>
+                <div>
+                    @Html.TextBoxFor(Model => Model.PayData.Holder, new { placeholder = "Владелец" })
+                </div>
+                <div>
+                    @Html.TextBoxFor(Model => Model.PayData.DateEnd, new { placeholder = "Дата окончания" })
+                </div>
+                <div>
+                    @Html.TextBoxFor(Model => Model.PayData.CVC, new { placeholder = "CVC" })
+                </div>
+
+                <div>
+                    <input type="submit" value="Регистрация" />
+                </div>
+            </form>
+        }
+        else
+        {   <h2 style="color:white">Вы уже авторизированы, перенеправление через 3 секунды</h2>
+            <script>
+                setTimeout(()=>location.replace("http://localhost:7703/"),3000);
+            </script>
+        }
+    </div> 
+        </body>
 </html>

@@ -12,10 +12,10 @@
                     </div>
                     <div class="main-item-title">
                         <div class="item-title">
-                            <h5>@Model[0].Name</h5>
+                            <h3>@Model[0].Name</h3>
                         </div>
                         <div class="cost">
-                            @Model[0].Cost
+                            @((float)Model[0].Cost) р.
                         </div>
                     </div>
                     <div class="text">
@@ -31,10 +31,10 @@
                     </div>
                     <div class="main-item-title">
                         <div class="item-title">
-                            <h5>@Model[1].Name</h5>
+                            <h3>@Model[1].Name</h3>
                         </div>
                         <div class="cost">
-                            @Model[1].Cost
+                            @((float)Model[1].Cost) р.
                         </div>
                     </div>
                     <div class="text">
@@ -50,10 +50,10 @@
                     </div>
                     <div class="main-item-title">
                         <div class="item-title">
-                            <h5>@Model[2].Name</h5>
+                            <h3>@Model[2].Name</h3>
                         </div>
                         <div class="cost">
-                            @Model[2].Cost
+                            @((float)Model[2].Cost) р.
                         </div>
                     </div>
                     <div class="text">
@@ -69,10 +69,10 @@
                     </div>
                     <div class="main-item-title">
                         <div class="item-title">
-                            <h5>@Model[3].Name</h5>
+                            <h3>@Model[3].Name</h3>
                         </div>
                         <div class="cost">
-                            @Model[3].Cost
+                            @((float)Model[3].Cost) р.
                         </div>
                     </div>
                     <div class="text">
@@ -117,13 +117,13 @@
                     <div class="s2-row1-image">
                         <div class="s2-row1-image-name">
                             <h5>
-                                @Model[4].Name @Model[4].Cost  р.
+                                @Model[4].Name @((float)Model[4].Cost)  р.
                             </h5>
                         </div>
                         <img src="~/Images/EquipmentsPhoto/@Model[4].imageEquipmentPath" alt="" width="100%" height="100%">
                     </div>
                     <div class="s2-row1-text">
-                        <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas cum explicabo dolore aut ipsum in temporibus dolor aliquam eligendi veniam nulla omnis fugit suscipit, odio minus corrupti aspernatur distinctio placeat?</span>
+                        <span>Пылесос известного британского бренда Morphy имеет самое продолжительное время работы. Время работы - 2,8 раз больше, чем у мощных беспроводных пылесосов других брендов. </span>
                         <a href="~/Catalog/Equip/@Model[4].idEquipment" class="btn-user-buy">
                             <b>= Подробнее =</b>
                         </a>
@@ -131,7 +131,7 @@
                 </div>
                 <div class="section2-row2">
                     <div class="s2-row1-text">
-                        <span>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Illo odit excepturi rem quia inventore autem repudiandae quam aliquid iure, numquam, aperiam, ex sint facere perferendis beatae earum hic dolorem! Quas.</span>
+                        <span>Полноразмерная встраиваемая посудомоечная машина с пятью уровнями распределения воды обеспечивает превосходный результат мытья.</span>
                         <a href="~/Catalog/Equip/@Model[5].idEquipment" class="btn-user-buy">
                             <b>= Подробнее =</b>
                         </a>
@@ -139,7 +139,8 @@
                     <div class="s2-row1-image">
                         <div class="s2-row1-image-name">
                             <h5>
-                                @Model[5].Name @Model[5].Cost  р.
+                                @Model[5].Name @((float)Model[5].Cost)  р.
+
                             </h5>
                         </div>
                         <img src="~/Images/EquipmentsPhoto/@Model[5].imageEquipmentPath" alt="" width="100%" height="100%">
