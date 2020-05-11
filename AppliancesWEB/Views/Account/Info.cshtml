@@ -10,10 +10,10 @@
             @if (Session["Login"] != null)
             {
                 <div class="ac-main-row1">
-                    <div class="photo">
+                    <div class="photo data-contact-flex d-flex justify-content-center">
                         @if (!string.IsNullOrEmpty(Model.DataUser.imageUserPath))
                         {
-                            <img src="~/Images/UserPhoto/@Model.DataUser.imageUserPath" alt="Изображение отсутствует" width="100%" height="100%">
+                            <img src="~/Images/UserPhoto/@Model.DataUser.imageUserPath" alt="Изображение отсутствует" width="400px" height="400px">
                         }
                         else
                         {
@@ -24,31 +24,51 @@
                                 </form>
                         }
                     </div>
-                    <div class="main-data">
-                        <span>Логин: @AuthUser.Login</span>
-                        <span>Фамилия: @Model.DataUser.Surname</span>
-                        <span>Имя: @Model.DataUser.Name</span>
-                        <span>Отчество: @Model.DataUser.Patronymic</span>
-                        <span>Почта: @AuthUser.Email</span>
-                       
-                    </div>
-                    <div class="paydata">
-                        <h4 style="margin-top:0px;margin-bottom:0px">Платежные данные</h4>
-                        <span>Номер карты: @Model.PayData.NumberCard.Substring(9)********</span>
-                        <span>Дата окончания: @Model.PayData.DateEnd</span>
+                    <div class="d-flex justify-content-between mb-3 flex-wrap align-content-between">
+                        <ul class="list-group nav-fill">
+                            <li class="list-group-item list-group-item-primary">Основные данные</li>
+                            <li class="list-group-item">Логин: @AuthUser.Login</li>
+                            <li class="list-group-item">Фамилия: @Model.DataUser.Surname</li>
+                            <li class="list-group-item">Имя: @Model.DataUser.Name</li>
+                            <li class="list-group-item">Отчество: @Model.DataUser.Patronymic</li>
+                            <li class="list-group-item">Почта: @AuthUser.Email</li>
+                        </ul>
+                        <ul class="list-group" style="width:fit-content">
+                            <li class="list-group-item list-group-item-secondary">Дополнительная информация</li>
+                            <li class="list-group-item">Дата рождения: @Model.DataUser.DateBirth.ToShortDateString()</li>
+                            <li class="list-group-item">Город: @Model.DataUser.City</li>
+                            <li class="list-group-item">Регион: @Model.DataUser.Region</li>
+                            <li class="list-group-item">Адрес: @Model.DataUser.Adress</li>
+                         </ul>
+                        <ul class="list-group align-self-center mt-3" style="width:fit-content">
+                            <li class="list-group-item list-group-item-danger">Платежные данные</li>
+                            <li class="list-group-item list-group-item-danger">Номер карты: @Model.PayData.NumberCard.Substring(9)********</li>
+                            <li class="list-group-item list-group-item-danger">Дата окончания: @Model.PayData.DateEnd</li>
+                            <li class="list-group-item list-group-item-info">
+                                <div class="dropleft w-100">
+                                    <button class="btn btn-info dropdown-toggle w-100" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        История покупок
+                                    </button>
+                                    <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                                        @{ var ordersUser = new AppliancesContext().Orders.Where(x => x.idUser == AuthUser.Id).ToList();
+                                            foreach(var b in ordersUser)
+                                            {
+                                            <button class="dropdown-item" type="button" style="padding:0">
+                                                <a class="nav-link" href="/Catalog/Equip/@b.idEquipment">@b.Equipments.Name @b.DateOrder.ToShortDateString() @((float)b.Summary) р. 
+                                                   </a>
+                                            </button>
+                                            }
+                                        }
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
                     </div>
                 </div>
-                <div class="ac-main-row2">
-                    <div class="main-data-1">
-                        <span>Дата рождения: @Model.DataUser.DateBirth.ToShortDateString()</span>
-                        <span>Город: @Model.DataUser.City</span>
-                        <span>Регион: @Model.DataUser.Region</span>
-                        <span>Адрес: @Model.DataUser.Adress</span>
-                    </div>
-                </div>
-            }
-            else
-            {
+                <div class="text-center text-success"><h3>Чтобы изменить учетные данные обратитесь в поддержку.</h3></div>
+                                            }
+                                            else
+                                            {
                 <div style="padding:200px">
                     <span style="font-size:30px">Для просмотра пользовательской информации войдите в аккаунт!</span>
                 </div>

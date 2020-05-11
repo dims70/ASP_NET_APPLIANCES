@@ -1,152 +1,120 @@
 ﻿@model List<Equipments>
 <div class="main">
-    <div class="container">
-        <div class="main-content">
-            <div>
-                <h1>Надежность в отличном виде</h1>
+    <div class="row h-100 justify-content-center" style="margin-left:0;margin-right:0;">
+        <div class="col-sm-6">
+            <div class="card">
+                <img src="/Images/EquipmentsPhoto/@Model[0].imageEquipmentPath" class="card-img-top" alt="..." width="200" height="200">
+                <div class="card-body">
+                    <h5 class="card-title">@Model[0].Name     @((float)Model[0].Cost) р.</h5>
+                    <p class="card-text">@Model[0].Description</p>
+                    <a href="~/Catalog/Equip/@Model[0].idEquipment" class="btn btn-primary">Подробнее...</a>
+                </div>
             </div>
-            <div class="main-container">
-                <div class="main-container-item">
-                    <div class="main-item-img">
-                        <img src="~/Images/EquipmentsPhoto/@Model[0].imageEquipmentPath" alt="" width="100%">
-                    </div>
-                    <div class="main-item-title">
-                        <div class="item-title">
-                            <h3>@Model[0].Name</h3>
-                        </div>
-                        <div class="cost">
-                            @((float)Model[0].Cost) р.
-                        </div>
-                    </div>
-                    <div class="text">
-                        @Model[0].Description
-                    </div>
-                    <div class="btn-info-item">
-                        <a href="~/Catalog/Equip/@Model[0].idEquipment">Подробности..</a>
-                    </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="card">
+                <img src="/Images/EquipmentsPhoto/@Model[1].imageEquipmentPath" class="card-img-top" alt="..." width="200" height="200">
+                <div class="card-body">
+                    <h5 class="card-title">@Model[1].Name     @((float)Model[1].Cost) р.</h5>
+                    <p class="card-text">@Model[1].Description</p>
+                    <a href="~/Catalog/Equip/@Model[1].idEquipment" class="btn btn-primary">Подробнее...</a>
                 </div>
-                <div class="main-container-item">
-                    <div class="main-item-img">
-                        <img src="~/Images/EquipmentsPhoto/@Model[1].imageEquipmentPath" alt="" width="100%" height="100%">
-                    </div>
-                    <div class="main-item-title">
-                        <div class="item-title">
-                            <h3>@Model[1].Name</h3>
-                        </div>
-                        <div class="cost">
-                            @((float)Model[1].Cost) р.
-                        </div>
-                    </div>
-                    <div class="text">
-                        @Model[1].Description
-                    </div>
-                    <div class="btn-info-item">
-                        <a href="~/Catalog/Equip/@Model[1].idEquipment">Подробности..</a>
-                    </div>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="card">
+                <img src="/Images/EquipmentsPhoto/@Model[2].imageEquipmentPath" class="card-img-top" alt="..." width="200" height="200">
+                <div class="card-body">
+                    <h5 class="card-title">@Model[2].Name     @((float)Model[2].Cost) р.</h5>
+                    <p class="card-text">@Model[2].Description</p>
+                    <a href="~/Catalog/Equip/@Model[2].idEquipment" class="btn btn-primary">Подробнее...</a>
                 </div>
-                <div class="main-container-item">
-                    <div class="main-item-img">
-                        <img src="~/Images/EquipmentsPhoto/@Model[2].imageEquipmentPath" alt="" width="100%">
-                    </div>
-                    <div class="main-item-title">
-                        <div class="item-title">
-                            <h3>@Model[2].Name</h3>
-                        </div>
-                        <div class="cost">
-                            @((float)Model[2].Cost) р.
-                        </div>
-                    </div>
-                    <div class="text">
-                        @Model[2].Description
-                    </div>
-                    <div class="btn-info-item">
-                        <a href="~/Catalog/Equip/@Model[2].idEquipment">Подробности..</a>
-                    </div>
-                </div>
-                <div class="main-container-item">
-                    <div class="main-item-img">
-                        <img src="~/Images/EquipmentsPhoto/@Model[3].imageEquipmentPath" alt="" width="100%">
-                    </div>
-                    <div class="main-item-title">
-                        <div class="item-title">
-                            <h3>@Model[3].Name</h3>
-                        </div>
-                        <div class="cost">
-                            @((float)Model[3].Cost) р.
-                        </div>
-                    </div>
-                    <div class="text">
-                        @Model[3].Description
-                    </div>
-                    <div class="btn-info-item">
-                        <a href="~/Catalog/Equip/@Model[3].idEquipment">Подробности..</a>
-                    </div>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="card">
+                <img src="/Images/EquipmentsPhoto/@Model[3].imageEquipmentPath" class="card-img-top" alt="..." width="200" height="200">
+                <div class="card-body">
+                    <h5 class="card-title">@Model[3].Name     @((float)Model[3].Cost) р.</h5>
+                    <p class="card-text">@Model[3].Description</p>
+                    <a href="~/Catalog/Equip/@Model[3].idEquipment" class="btn btn-primary">Подробнее...</a>
                 </div>
             </div>
         </div>
     </div>
 </div>
-<div class="section1">
-    <div class="container">
-        <div class="section1-container">
-            <div class="section1-title">
-                <h1>Только у нас лучший ассортимент.</h1>
-            </div>
-            <div class="section1-content">
-                <div class="s1-content-text">
-                    <span><b style="color:darkblue">Ассортимент на все случаи жизни</b> - у нас есть все чтобы вам хотелось. Лучший ассортимент различной бытовой техники. Доставка в любую точку России. Долгая гарантия, высокое качество.</span>
-                    <a href="~/Catalog/Index" class="btn-catalogue">
-                        Перейти в каталог <b>=></b>
-                    </a>
-                </div>
-                <div class="s1-content-image">
-                    <img src="~/Images/garanties.png" alt="" width="100%" height="100%">
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="section2">
-    <div class="container">
-        <div class="section2-container">
-            <div class="section2-title">
-                <h2>Товары, выбираемые пользователями.</h2>
-            </div>
-            <div class="section2-content">
-                <div class="section2-row1">
-                    <div class="s2-row1-image">
-                        <div class="s2-row1-image-name">
-                            <h5>
-                                @Model[4].Name @((float)Model[4].Cost)  р.
-                            </h5>
-                        </div>
-                        <img src="~/Images/EquipmentsPhoto/@Model[4].imageEquipmentPath" alt="" width="100%" height="100%">
-                    </div>
-                    <div class="s2-row1-text">
-                        <span>Пылесос известного британского бренда Morphy имеет самое продолжительное время работы. Время работы - 2,8 раз больше, чем у мощных беспроводных пылесосов других брендов. </span>
-                        <a href="~/Catalog/Equip/@Model[4].idEquipment" class="btn-user-buy">
-                            <b>= Подробнее =</b>
-                        </a>
-                    </div>
-                </div>
-                <div class="section2-row2">
-                    <div class="s2-row1-text">
-                        <span>Полноразмерная встраиваемая посудомоечная машина с пятью уровнями распределения воды обеспечивает превосходный результат мытья.</span>
-                        <a href="~/Catalog/Equip/@Model[5].idEquipment" class="btn-user-buy">
-                            <b>= Подробнее =</b>
-                        </a>
-                    </div>
-                    <div class="s2-row1-image">
-                        <div class="s2-row1-image-name">
-                            <h5>
-                                @Model[5].Name @((float)Model[5].Cost)  р.
 
-                            </h5>
-                        </div>
-                        <img src="~/Images/EquipmentsPhoto/@Model[5].imageEquipmentPath" alt="" width="100%" height="100%">
-                    </div>
+@* секция 1 *@
+<div class="section1 justify-content-center align-items-center">
+    <div class="card mb-3 mt-3 justify-content-center gocat" style="max-width: 840px;height:auto">
+        <div class="row no-gutters">
+            <div class="col-md-4">
+                <img src="~/Images/garanties.png" alt="..." width="280px" height="280px">
+            </div>
+            <div class="col-md-8 d-flex align-items-center">
+                <div class="card-body">
+                    <h5 class="card-title" style="background: burlywood;border-radius: 20px;">Только у нас лучший ассортимент.</h5>
+                    <p class="card-text" style="background: bisque;border-radius: 20px;"><b style="color:darkblue">Ассортимент на все случаи жизни</b> - у нас есть все чтобы вам хотелось. Лучший ассортимент различной бытовой техники. Доставка в любую точку России. Долгая гарантия, высокое качество.</p>
+                    <p class="card-text"><a class="btn btn-warning">Перейти в каталог<a/></p>
                 </div>
             </div>
         </div>
     </div>
 </div>
+<div class="section2 d-flex flex-column justify-content-center align-items-center">
+    <div class="mt-3 text-warning">
+        <h4 class="text-center">Товары, выбираемые пользователями.</h4>
+    </div>
+    <div class="card mb-3 mt-3 text-warning prefooter" style="max-width: 80%;">
+        <div class="row no-gutters">
+            <div class="col-md-4 d-flex justify-content-center align-items-center p-2">
+                <div style="height:200px;width:200px;position:relative">
+                <img src="~/Images/EquipmentsPhoto/@Model[4].imageEquipmentPath" alt="" width="200px" height="200px">
+                <div class="text-align-center" style="position:absolute;bottom:0;width:100%;">
+                    <h6 class="bg-warning mb-0 text-dark">
+                        @Model[4].Name @((float)Model[4].Cost)  р.
+                    </h6>
+                </div>
+                </div>
+            </div>
+            <div class="col-md-8">
+                <div class="card-body">
+                    <h5 class="card-title">@Model[4].Name</h5>
+                    <p class="card-text">Пылесос известного британского бренда Morphy имеет самое продолжительное время работы. Время работы - 2,8 раз больше, чем у мощных беспроводных пылесосов других брендов. </p>
+                    <p><button type="button" class="btn btn-primary btn-1">Подробнее...</button></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="card mb-3 prefooter text-warning" style="max-width: 80%;">
+        <div class="row no-gutters">
+            <div class="col-md-4 d-flex justify-content-center align-items-center p-2">
+                <div style="height:200px;width:200px;position:relative">
+                    <img src="~/Images/EquipmentsPhoto/@Model[5].imageEquipmentPath" alt="" width="200px" height="200px">
+                    <div class="text-align-center" style="position:absolute;bottom:0;width:100%;">
+                        <h6 class="bg-warning mb-0 text-dark">
+                            @Model[5].Name @((float)Model[5].Cost)  р.
+                        </h6>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-8">
+                <div class="card-body">
+                    <h5 class="card-title">@Model[5].Name</h5>
+                    <p class="card-text">Полноразмерная встраиваемая посудомоечная машина с пятью уровнями распределения воды обеспечивает превосходный результат мытья.</p>
+                    <p class="card-text"><button class="btn btn-primary btn-2">Подробнее...</button></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@section script{
+    <script>
+        $('.btn-2').click(function () {
+            window.location.href = "/Catalog/Equip/@Model[5].idEquipment";
+        });
+        $('.btn-1').click(function () {
+            window.location.href = "/Catalog/Equip/@Model[4].idEquipment";
+        });
+    </script>
+}

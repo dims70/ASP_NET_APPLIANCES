@@ -1,4 +1,4 @@
-body{
+/*body{
     margin:0;
     font-family: 'Google Sans', 'sans-serif';
 }
@@ -60,7 +60,7 @@ a:visited{
 .header-menu ul li{
     margin-left: 30px;
     border-bottom: 2px solid white;
-    /* cursor: pointer; */
+     cursor: pointer; 
 }
 .point-menu{
     font-weight: bold;
@@ -178,27 +178,28 @@ height: 100%;
 }
 
 .header-menu ul li:nth-child(1):hover{
-    /*background: rgba(255, 0, 0, 0.342);*/
+    background: rgba(255, 0, 0, 0.342);
     border-bottom:2px solid red;
 }
 .header-menu ul li:nth-child(2):hover {
-    /*background: rgba(255, 251, 0, 0.342);*/
+    background: rgba(255, 251, 0, 0.342);
     border-bottom: 2px solid yellow;
 }
 .header-menu ul li:nth-child(3):hover {
-    /*background: rgba(0, 255, 21, 0.342);*/
+    background: rgba(0, 255, 21, 0.342);
     border-bottom: 2px solid rgb(0, 255, 0);
 }
 .mobile-nav{
     display: none;
 }
-.mobile-menu-header { 
+.mobile-menu-header {
     position: absolute;
-    width:150px;
-    background: #acdff2;
-    right:-150px;
-    top: 0;
-    z-index: 2;
+    width: 200px;
+    background: #fde0a4;
+    right: 0;
+    z-index: 999;
+    border-radius: 20px;
+    font-size: 20px;
 }
 .mobile-nav-after{
     transition: 1s;
@@ -213,20 +214,28 @@ height: 100%;
     cursor: pointer;
     color:orange;
 }
-.mobile-nav-menu ul { 
-padding:0px;
+.mobile-nav-menu{
+    font-size:20px;
+}
+
+.mobile-nav-menu ul {
+    padding: 0px;
 }
 .mobile-nav-menu ul li{
 margin-top:20px;
 }
-.m-nav-container{
-    margin:25%;
-    margin-top: 100px!important;
+.m-nav-container {
+    display: flex;
+    flex-direction: column;
     position: relative;
+    align-items: center;
 }
 .mobile-nav-title {
+    width: 100%;
     position: relative;
- }
+    text-align: center;
+    border-bottom: 2px solid black;
+}
 .mobile-nav-menu ul{list-style: none; }
 .mobile-footer{
     display: none;
@@ -267,35 +276,8 @@ padding: 0px;
     position: relative;
     z-index: 12;
 }
-/* -----------------------------вюярхвмне опедярюбкемхе - хмдейя--------------------------- */
+ -----------------------------вюярхвмне опедярюбкемхе - хмдейя---------------------------*/ 
 
-.main-container {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-    height: 100%;
-    flex-wrap: wrap;
-}
-
-.main-content div h1 {
-    background: #ff8c00a6;
-    padding: 5px;
-    border-bottom: 5px solid;
-    border-radius: 10px 10px 0px 0px;
-}
-
-.main-item-img{
-    width:300px;
-    height:300px;
-    position:relative;
-}
-.title-photo-cen{
-    background:orange;
-    position:absolute;
-    margin-top:10px;
-    padding:5px;
-}
 
 .section1 {
     width: 100%;
@@ -358,24 +340,6 @@ padding: 0px;
     padding-left: 5px
 }
 
-.main-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.main-container-item {
-    width: 300px;
-    height: 400px;
-    background: #ff7f02;
-    margin: 20px;
-    display: flex;
-    flex-direction: column;
-    border: 2px solid #a9a9a9;
-    justify-content: space-between;
-    box-sizing:border-box;
-    overflow:hidden;
-}
 
 .photo form {
     display: flex;
@@ -389,10 +353,6 @@ padding: 0px;
     align-self: center;
 }
 
-.main-item-title {
-    display: inline-flex;
-    justify-content: space-between;
-}
 .text{
     font-size:18px;
 }
@@ -487,8 +447,8 @@ padding: 0px;
     text-align: center;
 }
 
-/* -----------------------------вюярхвмне опедярюбкемхе - хмдейя--------------------------- */
-/*------------------------------вюярхвмне опедярюбкемхе - мнбнярх--------------------------*/
+ /*-----------------------------вюярхвмне опедярюбкемхе - хмдейя--------------------------- 
+------------------------------вюярхвмне опедярюбкемхе - мнбнярх--------------------------
 .news {
     display: flex;
     width: 100%;
@@ -515,9 +475,9 @@ padding: 0px;
     width: 90%;
 }
 
-/*------------------------------вюярхвмне опедярюбкемхе - мнбнярх--------------------------*/
+------------------------------вюярхвмне опедярюбкемхе - мнбнярх--------------------------
 
-/*------------------------------вюярхвмне опедярюбкемхе - юййюсмр_хмтн--------------------------*/
+------------------------------вюярхвмне опедярюбкемхе - юййюсмр_хмтн--------------------------
 
 .account {
     display: flex;
@@ -578,13 +538,13 @@ padding: 0px;
     justify-content:center;
     margin-left:20px;
 }
-/*------------------------------вюярхвмне опедярюбкемхе - юййюсмр_хмтн--------------------------*/
+------------------------------вюярхвмне опедярюбкемхе - юййюсмр_хмтн--------------------------
 
-/*------------------------------вюярхвмне опедярюбкемхе - йюрюкнц--------------------------*/
+------------------------------вюярхвмне опедярюбкемхе - йюрюкнц--------------------------
 .catalog {
     width: 100%;
     height: auto;
-    background: #0a1114;
+    background: #44403c;
     display: flex;
 }
 
@@ -599,15 +559,18 @@ padding: 0px;
 .filter-stroke {
     width: 100%;
     height: 50px;
-    background: #a992f7;
+    background: #2b363a;
     display: inline-flex;
     align-items: center;
     justify-content: space-evenly;
 }
+    .filter-stroke form {
+        color: wheat;
+    }
 
-#searchfromcost {
-    padding: 5px;
-}
+    #searchfromcost {
+        padding: 5px;
+    }
 
 input[name="btn-submit-filter"] {
     padding: 5px;
@@ -620,7 +583,7 @@ input[name="btn-submit-filter"] {
     margin-top:0px;
     margin-bottom:0px;
 }
-/*------------------------------вюярхвмне опедярюбкемхе - хмтнплюжхъ на ндмнл рнбюпе------------------------*/
+------------------------------вюярхвмне опедярюбкемхе - хмтнплюжхъ на ндмнл рнбюпе------------------------
 
 .equipment {
     display: flex;
@@ -660,9 +623,9 @@ input[name="btn-submit-filter"] {
     background: rgb(192, 222, 135);
 }
 
-/*------------------------------вюярхвмне опедярюбкемхе - хмтнплюжхъ на ндмнл рнбюпе------------------------*/
+------------------------------вюярхвмне опедярюбкемхе - хмтнплюжхъ на ндмнл рнбюпе------------------------
 
-/*------------------------------вюярхвмне опедярюбкемхе - йюрюкнц-------------------------------------------*/
+------------------------------вюярхвмне опедярюбкемхе - йюрюкнц-------------------------------------------
 
 @media (max-width:921px){
     .header-menu ul{
@@ -679,6 +642,14 @@ input[name="btn-submit-filter"] {
         font-size: 18px !important;
     }
 }
+
+@media (min-width:377px) and (max-width:500px)  {
+
+    .footer-links {
+        font-size: 14px!important;
+    }
+}
+
 @media (min-width:922px) and (max-width:1100px) {
     .header-menu ul li {
         margin-left: 10px;
@@ -711,6 +682,60 @@ input[name="btn-submit-filter"] {
                 height: 100%;
                 padding: 0px
             }
-    }
+    }*/
+html, body {
+    height: max-content;
+    min-width:min-content;
+}
 
+*{
+    font-family:'Segoe UI',sans-serif;
+}
+.footer {
+    background: darkorange;
+    height: 100px;
+}
+
+.col-sm-6 {
+    margin-top: 20px;
+    max-width: 400px !important;
+}
+.card-img-top {
+    width:200px;
+}
+
+.card, .card-body{
+    align-items:center;
+    text-align:center;
+}
+.gocat{
+    height:370px;
+}
+.main {
+    background: linear-gradient(-45deg, white 55%, yellow 10%);
+}
+.prefooter {
+    height: auto;
+    background:#352b2b;
+}
+
+.card{
+height:100%;
+}
+
+.inwi li input{
+    width:100%;
+}
+
+@media (min-width:992px){
+    .hmenuh li {
+        margin-left: 20px;
+    }
+}
+@media (max-width:575px) {
+    input[name="btn-submit-filter"] {
+        width:100%;
+        margin-top:10px;
+    }
+}
 

@@ -40,7 +40,7 @@ namespace AppliancesWEB.Controllers
             { 
                 if(formCollection.GetValue("searchfromcost") !=null)
                 { 
-                    if(decimal.TryParse(formCollection.GetValue("cost").AttemptedValue , out decimal cost))
+                    if(decimal.TryParse(formCollection.GetValue("searchfromcost").AttemptedValue , out decimal cost))
                     { 
                         var equip = db.Equipments.Where(eq => eq.Cost > cost)
                         .ToList();
@@ -59,8 +59,40 @@ namespace AppliancesWEB.Controllers
         [HttpGet]
         public ActionResult Search(string search)
         {
-            var listSearch = db.Equipments.Where(x => x.Name.Contains(search)).ToList();
+            var listSearch = db.Equipments.Where(x => x.Name.Contains(search) || x.Categories.Name.Contains(search)).ToList();
             return View("Index", listSearch);
+        }
+
+        [HttpGet]
+        public ActionResult getSketch(int id)
+        {
+            var eq = db.Equipments.Find(id);
+            return Json(new { name = eq.Name },JsonRequestBehavior.AllowGet);
+        }
+        [HttpPost]
+        public JsonResult Buy(int idEq, decimal sum)
+        {
+            db.Orders.Add(
+                new Orders()
+                {
+                     idUser = AuthUser.Id,
+                     idEquipment = idEq,
+                     idStatus = 3,
+                     Number = 1,
+                     DateOrder =  DateTime.Parse(DateTime.Today.ToShortDateString()),
+                     Summary = sum
+                }
+                );
+            try
+            {
+                db.SaveChanges();
+                return Json(new { mes = "Заказ оплачен. Товар добавлен в историю покупок." });
+            }
+            catch
+            {
+                return Json(new { mes="Ошибка покупки, попробуйте еще раз." });
+            }
+            
         }
     }
 }

@@ -2,191 +2,89 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=0.5">
-    <link rel="stylesheet" href="~/Content/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="~/Content/font-awesome.css">
-    <link href="~/Content/googleFont.css" rel="stylesheet" />
-    <title>@ViewBag.Title</title>
+    <link rel="stylesheet" href="~/Content/style.css">
+    <title>Document</title>
 </head>
 <body>
-    <div class="wrapper">
+    <div class="container-fluid h-100 d-flex flex-column justify-content-between" style="padding-left: 0;padding-right:0; min-width: 300px;">
         <div class="header">
-            <div class="container">
-                <div class="header-container">
-                    <div class="name-container">
-                        <div class="img-logo">
-                            <img src="~/Images/logo.png" alt="" width="60" height="60">
-                        </div>
-                        <div class="title-logo">
-                            <a>LIAN</a>
-                        </div>
-                    </div>
-                    <div class="search-container">
-                        <div class="search">
-                            <form action="~/Catalog/Search" method="get" class="search">
-                                <input type="text" name="search" id="search" placeholder="Найти что-нибудь...">
-                                <button type="submit" class="btn-search"><i class="fa fa-search"></i></button>
-                            </form>
-                        </div>
-                    </div>
-                    <div class="header-menu">
-                        <ul>
-                            <li>
-                                <a class="point-menu" href="~/Catalog/Index">Каталог</a>
-                            </li>
-                            <li>
-                                <a class="point-menu" href="~/News/Index">Новости</a>
-                            </li>
-                            <li>
-                                @if (Session["Login"] == null)
-                                {
-                                <a class="point-menu" href="~/Auth/Sign">Аккаунт</a>
-                                }
-                                else
-                                {
-                                    <div style="color:white!important;border:none;cursor:pointer;margin:10px;">Вы: <a href="~/Account/Info" style="color:white">@Session["Login"]</a>
-                                        <a href="~/Auth/Out">
-                                            <i class="fa fa-sign-out" aria-hidden="true" style="color:red;font-size:20px;cursor:pointer;padding-left:5px">
-                                                
-                                            </i>
-                                        </a>
-                                    </div>
-                                }
-                            </li>
-                        </ul>
-                        <div class="mobile-nav" style="z-index: 3;position: relative;">
-                            <i class="fa fa-bars" id="burger" aria-hidden="true"></i>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="mobile-menu-header">
-            <div class="m-nav-container">
-                <div class="mobile-nav-title">
-                    <h3>Навигация</h3>
-                </div>
-                <div class="mobile-nav-menu">
-                    <ul>
-                        <li>
-                        <a href="~/Catalog/Index">Каталог</a>
+            <nav class="navbar navbar-expand-lg navbar-light bg-light bg-dark text-warning">
+                <a class="navbar-brand text-warning" href="/">LIAN</a>
+                <button class="navbar-toggler bg-warning" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon text-warning"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                    <ul class="navbar-nav d-flex justify-content-center mr-auto hmenuh" style="width:60%">
+                        <li class="nav-item" style="border-bottom:2px solid #fff">
+                            <a class="nav-link text-warning" href="~/Catalog/Index">Каталог<span class="sr-only">(current)</span></a>
                         </li>
-                        <li>
-                        <a href="~/News/Index">Новости</a>
+                        <li class="nav-item" style="border-bottom:2px solid aquamarine">
+                            <a class="nav-link text-warning" href="~/News/Index">Новости</a>
                         </li>
-                        <li>
-                            @if (Session["Login"] == null)
-                            {
-                                <a href="~/Auth/Sign">Аккаунт</a>
-                            }
-                            else
-                            {
-                                <div style="text-align:center">
-                                    Вы: <a href="~/Account/Info">@Session["Login"]</a>
-                                    <a href="/Auth/Out">
+                            @if (Session["Login"] != null)
+                            {   <li class="nav-item" style="border-bottom:2px solid #0026ff">
+                                    <a href="~/Account/Info" class="text-warning nav-link">Посмотреть профиль</a>
+                                </li>
+                                <li class="nav-item" style="border-bottom:2px solid red">
+                                    <a href="~/Auth/Out" class="text-warning nav-link">
+                                        Выйти:
                                         <i class="fa fa-sign-out" aria-hidden="true" style="color:red;font-size:20px;cursor:pointer;padding-left:5px">
-
                                         </i>
                                     </a>
-                                </div>
+                                </li>
                             }
-                        </li>
-                        <li>@Html.ActionLink("Связь с нами","../Info/InfoPage")</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-                @RenderBody()
+                            else
+                            {   <li class="nav-item" style="border-bottom:2px solid #4cff00">
+                                    <a class="nav-link text-warning" href="~/Auth/Sign">Аккаунт</a>
+                                </li>
 
+                            }
+                            </ul>
+                    <form class="form-inline my-2 my-lg-0" method="GET" action="/Catalog/Search">
+                        <input class="form-control mr-sm-2" type="search" placeholder="Поиск..." name="search" aria-label="Search">
+                        <button class="btn btn-outline-warning my-2 my-sm-0" type="submit">Найти</button>
+                    </form>
+                </div>
+            </nav>
+        </div>
+       @RenderBody()
         <div class="footer">
-            <div class="container">
-                <div class="mobile-footer">
-                    <ul>
-                        <li>
-                            <span style="color:rgb(166, 206, 201)" class="menu-item-1">Навигация <i class="fa fa-caret-square-o-down" aria-hidden="true"></i></span>
-                            <div class="item-1">
-                                <a href="/">На главную</a>
-                                <a href="/Info/InfoPage">О нас</a>
-                                <a href="">Каталог</a>
-                                <a href="/Info/InfoPage#contact">Обратная связь</a>
-                            </div>
-                        </li>
-                        <li>
-                            <span style="color:rgb(166, 206, 201)" class="menu-item-2">Контакты <i class="fa fa-caret-square-o-down" aria-hidden="true"></i></span>
-                            <div class="item-2">
-                                <a>Email: shkarpetovd@mail.ru</a>
-                                <a>Телефон: 89283533269</a>
-                                <a>Вконтакте: vk.com/pantheon404</a>
-                                <a>Instagram: e.x.ception_</a>
-                            </div>
-                        </li>
-                        <li>
-                            <span style="color:rgb(166, 206, 201)" class="menu-item-3">Связь с нами <i class="fa fa-caret-square-o-down" aria-hidden="true"></i></span>
-                            <div class="item-3">
-                                <a href="/Info/InfoPage#contact">По электронной почте</a>
-                                <a href="/Info/InfoPage#contact">По номеру телефона</a>
-                            </div>
-                        </li>
+            <ul class="list-group list-group-horizontal nav-fills" style="font-size:0.9rem">
+                <li class="list-group-item flex-fill">
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item" style="background: aquamarine;">Навигация</li>
+                        <li class="list-group-item"><a href="/">На главную</a></li>
+                        <li class="list-group-item"><a href="/Info/InfoPage">О нас</a></li>
+                        <li class="list-group-item"><a href="">Каталог</a></li>
+                        <li class="list-group-item"><a href="/Info/InfoPage#contact">Обратная связь</a></li>
                     </ul>
-                </div>
-                <div class="footer-container">
-                    <div class="footer-item-1">
-                        <div class="footer-item-title">
-
-                            <div class="footer-title">
-                                <h3>
-                                    Навигация
-                                </h3>
-                            </div>
-                        </div>
-                        <div class="footer-links">
-                            <a href="/">На главную</a>
-                            <a href="/Info/InfoPage">О нас</a>
-                            <a href="">Каталог</a>
-                            <a href="/Info/InfoPage#contact">Обратная связь</a>
-                        </div>
-                    </div>
-                    <div class="footer-item-2">
-                        <div class="footer-item-title">
-
-                            <div class="footer-title">
-                                <h3>Контакты</h3>
-                            </div>
-                        </div>
-                        <div class="footer-links">
-                            <a>@@: shkarpetovd@mail.ru</a>
-                            <a>Телефон: 89283533269</a>
-                            <a>VK: /pantheon404</a>
-                            <a>Instagram: e.x.ception_</a>
-                        </div>
-                    </div>
-                    <div class="footer-item-3">
-                        <div class="footer-item-title">
-
-                            <div class="footer-title">
-                                <h3>Связь с нами</h3>
-                            </div>
-                        </div>
-                        <div class="footer-links">
-                            <a href="/Info/InfoPage#contact">По электронной почте</a>
-                            <a href="/Info/InfoPage#contact">По номеру телефона</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="copyright">
-            <div class="container">
-                <h3 align="center" style="margin:0;color:white">
-                    Copyright 2020.
-                </h3>
-            </div>
+                </li>
+                <li class="list-group-item flex-fill">
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item" style="background: antiquewhite;">Контакты:</li>
+                        <li class="list-group-item">Email: shkarpetovd@mail.ru</li>
+                        <li class="list-group-item">Телефон: 89283533269</li>
+                        <li class="list-group-item">Вконтакте: vk.com/pantheon404</li>
+                        <li class="list-group-item">Instagram: e.x.ception_</li>
+                    </ul>
+                </li>
+                <li class="list-group-item flex-fill">
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item" style="background: coral;">Связаться:</li>
+                        <li class="list-group-item"><a href="/Info/InfoPage#contact">По электронной почте</a></li>
+                        <li class="list-group-item"><a href="/Info/InfoPage#contact">По номеру телефона</a></li>
+                    </ul>
+                </li>
+            </ul>
         </div>
     </div>
-    </div>
-    <script src="~/Scripts/click.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
     <script src="~/Scripts/jquery 3.4.1.js"></script>
-    <script src="~/Scripts/main.js"></script>
-    
+    @RenderSection("script",false);
 </body>
 </html>

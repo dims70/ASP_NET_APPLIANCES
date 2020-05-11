@@ -2,31 +2,88 @@
 @{
     ViewBag.Title = "Техника";
     var db = new AppliancesContext();
+
 }
-<div class="equipment">
-    <div class="container">
-        <div class="equipment-content">
-            <div class="title-equipment">
-                <h3>@Model.Name</h3>
-                <h5>Артикул: @Model.idEquipment</h5>
-                <h5>Категория: @(db.Categories.Where(c=>Model.idCategory==c.idCategory).ToList()[0].Name)</h5>
+@* Модальное окно *@
+@if (Session["Login"] != null)
+{   var login = Session["Login"];
+    var dataUsers = @db.AuthUsers.Where(x => x.Login == login).FirstOrDefault().DataUsers;
+<div class="modal fade" id="staticBackdrop" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="staticBackdropLabel">Уведомление о покупке</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
             </div>
-            <div class="equipment-photo">
-                <img src="~/Images/EquipmentsPhoto/@Model.imageEquipmentPath" alt="Не удалось загрузить изображение" width="100%" height="100%">
+            <div class="modal-body">
+                <span>
+                    Вы точно хотите купить данный товар: <span id="puttext">
+                        @Model.Name <b>@((float)Model.Cost)р.</b>
+                    </span>
+                </span>
+                <p>
+                    Вы будете перенаправлены на страницу оплаты...
+                    Если у вас карта не защищена кодом. Товар будет сразу оплачен.
+                </p>
+                <p>
+                    Товар будет доставлен по адресу:
+                    @dataUsers.Region @dataUsers.City @dataUsers.Adress
+                </p>
             </div>
-            <div class="cost">
-                <h2>Цена: @Model.Cost</h2>
-            </div>
-            <div class="buy">
-                <a href="buy" class="buya">Купить</a>
-            </div>
-            <div class="description">
-                <h2>О товаре</h2>
-                <h3>Производитель: @Model.Builder</h3>
-                <h3>Состояние товара: @Model.StateEquipment</h3>
-                <span>@Model.Description</span>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Отмена</button>
+                <button type="button" class="btn btn-success" data-action="buy">Купить</button>
             </div>
         </div>
     </div>
 </div>
+    }
 
+@* Модальное окно *@
+
+<div class="equipment">
+    <div class="card" style="width: 100%;border:0">
+        <img src="~/Images/EquipmentsPhoto/@Model.imageEquipmentPath" alt="..." width="400" height="400">
+        <div class="card-body">
+            <h5 class="card-title">@Model.Name</h5>
+            <p class="card-text">@Model.Description</p>
+        </div>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">Артикул: @Model.idEquipment</li>
+            <li class="list-group-item">Категория: @db.Equipments.Find(Model.idEquipment).Categories.Name</li>
+            <li class="list-group-item">Производитель: @Model.Builder</li>
+            <li class="list-group-item">Стоимость: <b>@((float)Model.Cost)р.</b></li>
+            <li class="list-group-item">Состояние товара: @Model.StateEquipment</li>
+        </ul>
+        <div class="card-body buyalert">
+            @if (Session["Login"] == null)
+            {
+                <a>Для совершения покупки необходимо авторизоваться.</a>
+            }
+            else
+            {
+                <button type="button" class="btn btn-outline-success" data-toggle="modal" data-target="#staticBackdrop">Купить</button>
+                <a href="/Info/InfoPage#contact" class="btn btn-outline-danger">Пожаловаться</a>
+            }
+
+        </div>
+    </div>
+</div>
+@section script{
+    <script>
+        $("body").on('click','[data-action="buy"]',function () {
+            $.ajax({
+                url: "/Catalog/Buy",
+                dataType: "json",
+                data: {idEq:"@Model.idEquipment", sum:"@Model.Cost"},
+                method:"post",
+                success: function (data) {
+                    $('.close').click();
+                    $('.buyalert').html(`<div class='alert alert-success' role='alert'>${data.mes}</div>`);
+                }
+            });
+        });
+    </script>
+}
