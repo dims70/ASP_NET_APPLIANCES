@@ -53,11 +53,11 @@
                             {
                                 <div class="bg-warning w-100">Уценка 25%!</div>
                             }
-                            <img src="~/Images/EquipmentsPhoto/@eq.imageEquipmentPath" class="card-img-top" alt="..." width="200" height="200">
-                            <div class="card-body">
+                            <img src="~/Images/EquipmentsPhoto/@eq.imageEquipmentPath" alt="..." width="auto" height="200">
+                            <div class="card-body" style="width:100%;display: flex;flex-direction: column;justify-content: space-between;">
                                 <h5 class="card-title">@eq.Name     @((float)eq.Cost) р.</h5>
                                 <p class="card-text">@eq.Description</p>
-                                <a href="~/Catalog/Equip/@eq.idEquipment" class="btn btn-primary">Подробнее...</a>
+                                <a href="~/Catalog/Equip/@eq.idEquipment" class="btn btn-light w-100">Подробнее...</a>
                             </div>
                         </div>
                     </div>

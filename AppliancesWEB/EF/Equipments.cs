@@ -43,6 +43,14 @@ namespace AppliancesWEB
         [StringLength(100)]
         public string imageEquipmentPath { get; set; }
 
+        [StringLength(100)]
+        public string imageEquipmentPath1 { get; set; }
+
+        [StringLength(100)]
+        public string imageEquipmentPath2 { get; set; }
+
+        public string FullDesc { get; set; }
+
         public virtual Categories Categories { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

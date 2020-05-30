@@ -16,10 +16,16 @@
       <publishTime>04/02/2020 10:23:54</publishTime>
     </File>
     <File Include="bin/AppliancesWEB.dll">
-      <publishTime>05/08/2020 17:58:23</publishTime>
+      <publishTime>05/11/2020 11:56:50</publishTime>
     </File>
     <File Include="bin/AppliancesWEB.pdb">
-      <publishTime>05/08/2020 17:58:23</publishTime>
+      <publishTime>05/11/2020 11:56:50</publishTime>
+    </File>
+    <File Include="bin/App_global.asax.compiled">
+      <publishTime>05/11/2020 11:57:26</publishTime>
+    </File>
+    <File Include="bin/App_global.asax.dll">
+      <publishTime>05/11/2020 11:57:26</publishTime>
     </File>
     <File Include="bin/EntityFramework.dll">
       <publishTime>04/02/2020 10:23:57</publishTime>
@@ -238,7 +244,7 @@
       <publishTime>04/03/2020 20:16:02</publishTime>
     </File>
     <File Include="Content/style.css">
-      <publishTime>05/08/2020 14:41:23</publishTime>
+      <publishTime>05/10/2020 17:20:11</publishTime>
     </File>
     <File Include="favicon.ico">
       <publishTime>04/02/2020 10:23:53</publishTime>
@@ -358,10 +364,13 @@
       <publishTime>04/07/2020 14:50:36</publishTime>
     </File>
     <File Include="Images/UserPhoto/miha33.jfif">
-      <publishTime>04/02/2020 11:45:51</publishTime>
+      <publishTime>05/10/2020 19:12:42</publishTime>
     </File>
     <File Include="Images/UserPhoto/test.jpg">
       <publishTime>04/02/2020 11:49:31</publishTime>
+    </File>
+    <File Include="PrecompiledApp.config">
+      <publishTime>05/11/2020 11:56:58</publishTime>
     </File>
     <File Include="Scripts/click.js">
       <publishTime>05/05/2020 18:26:59</publishTime>
@@ -373,16 +382,16 @@
       <publishTime>04/02/2020 10:23:42</publishTime>
     </File>
     <File Include="Views/Account/Info.cshtml">
-      <publishTime>04/07/2020 17:55:55</publishTime>
+      <publishTime>05/11/2020 11:36:29</publishTime>
     </File>
     <File Include="Views/Catalog/Equip.cshtml">
-      <publishTime>04/03/2020 14:47:13</publishTime>
+      <publishTime>05/11/2020 11:15:58</publishTime>
     </File>
     <File Include="Views/Catalog/Index.cshtml">
-      <publishTime>04/04/2020 19:15:51</publishTime>
+      <publishTime>05/10/2020 18:13:48</publishTime>
     </File>
     <File Include="Views/Home/Index.cshtml">
-      <publishTime>04/06/2020 18:06:45</publishTime>
+      <publishTime>05/10/2020 17:57:15</publishTime>
     </File>
     <File Include="Views/News/Index.cshtml">
       <publishTime>04/02/2020 14:30:24</publishTime>
@@ -391,7 +400,7 @@
       <publishTime>04/02/2020 10:23:42</publishTime>
     </File>
     <File Include="Views/Shared/_Layout.cshtml">
-      <publishTime>05/08/2020 17:58:07</publishTime>
+      <publishTime>05/11/2020 11:00:42</publishTime>
     </File>
     <File Include="Views/Web.config">
       <publishTime>04/02/2020 10:23:42</publishTime>
@@ -400,7 +409,7 @@
       <publishTime>04/02/2020 10:23:42</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>04/02/2020 17:29:41</publishTime>
+      <publishTime>05/11/2020 11:56:53</publishTime>
     </File>
   </ItemGroup>
 </Project>

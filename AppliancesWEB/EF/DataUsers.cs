@@ -43,5 +43,6 @@ namespace AppliancesWEB
         public virtual AuthUsers AuthUsers { get; set; }
 
         public virtual PayData PayData { get; set; }
+       
     }
 }
